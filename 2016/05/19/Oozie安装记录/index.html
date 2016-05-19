@@ -5,37 +5,37 @@
   
   <title>Oozie安装记录 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mac Oozie安装记录##说明用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考
+  <meta name="description" content="Mac Oozie安装记录说明用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考
 Oozie环境依赖
 Unix box (tested on Mac OS X and Linux)
 Java JDK 1.6+
 Maven 3.0.1+
 Hadoop 0.20.2+
 Pig 0.7+
-ExtJS library (optional, to enable Oozie webc">
+ExtJS library (optional, to enable Oozie webcon">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oozie安装记录">
 <meta property="og:url" content="http://yoursite.com/2016/05/19/Oozie安装记录/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Mac Oozie安装记录##说明用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考
+<meta property="og:description" content="Mac Oozie安装记录说明用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考
 Oozie环境依赖
 Unix box (tested on Mac OS X and Linux)
 Java JDK 1.6+
 Maven 3.0.1+
 Hadoop 0.20.2+
 Pig 0.7+
-ExtJS library (optional, to enable Oozie webc">
-<meta property="og:updated_time" content="2016-05-19T11:23:31.000Z">
+ExtJS library (optional, to enable Oozie webcon">
+<meta property="og:updated_time" content="2016-05-19T12:10:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oozie安装记录">
-<meta name="twitter:description" content="Mac Oozie安装记录##说明用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考
+<meta name="twitter:description" content="Mac Oozie安装记录说明用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考
 Oozie环境依赖
 Unix box (tested on Mac OS X and Linux)
 Java JDK 1.6+
 Maven 3.0.1+
 Hadoop 0.20.2+
 Pig 0.7+
-ExtJS library (optional, to enable Oozie webc">
+ExtJS library (optional, to enable Oozie webcon">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -106,7 +106,7 @@ ExtJS library (optional, to enable Oozie webc">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Mac-Oozie安装记录"><a href="#Mac-Oozie安装记录" class="headerlink" title="Mac Oozie安装记录"></a>Mac Oozie安装记录</h1><p>##说明<br>用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考</p>
+        <h1 id="Mac-Oozie安装记录"><a href="#Mac-Oozie安装记录" class="headerlink" title="Mac Oozie安装记录"></a>Mac Oozie安装记录</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考</p>
 <h2 id="Oozie环境依赖"><a href="#Oozie环境依赖" class="headerlink" title="Oozie环境依赖"></a>Oozie环境依赖</h2><ul>
 <li>Unix box (tested on Mac OS X and Linux)</li>
 <li>Java JDK 1.6+</li>
@@ -115,102 +115,50 @@ ExtJS library (optional, to enable Oozie webc">
 <li>Pig 0.7+</li>
 <li>ExtJS library (optional, to enable Oozie webconsole)</li>
 </ul>
-<p>###本机环境</p>
-<ul>
+<h3 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h3><ul>
 <li>Mac OS 10.11.4 2.2GHz Intel Core i7</li>
 <li>Java:1.8.0 91 JRE:1.8.0_91-b14</li>
 <li>Apache Maven 3.3.9 </li>
 </ul>
-<h2 id="Java安装以及环境变量设置"><a href="#Java安装以及环境变量设置" class="headerlink" title="Java安装以及环境变量设置"></a>Java安装以及环境变量设置</h2><p>hadoop需要java版本在1.6及以上，在terminal中通过<code>java -version</code>，显示本机的java版本：</p>
-<pre><code>java version &quot;1.8.0_91&quot;
-Java(TM) SE Runtime Environment (build 1.8.0_91-b14)
-Java HotSpot(TM) 64-Bit Server VM (build 25.91-b14, mixed mode)
-</code></pre><h2 id="Maven安装"><a href="#Maven安装" class="headerlink" title="Maven安装"></a>Maven安装</h2><p>Oozie依赖Maven，要求版本在3.0.1及以上，配置安装过程如下：</p>
+<h2 id="Java安装以及环境变量设置"><a href="#Java安装以及环境变量设置" class="headerlink" title="Java安装以及环境变量设置"></a>Java安装以及环境变量设置</h2><p>hadoop需要java版本在1.6及以上，在terminal中通过<code>jave -version</code>显示java版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ java -version</span><br><span class="line">java version <span class="string">"1.8.0_91"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_91-b14)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.91-b14, mixed mode)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Maven安装"><a href="#Maven安装" class="headerlink" title="Maven安装"></a>Maven安装</h2><p>Oozie依赖Maven，要求版本在3.0.1及以上，配置安装过程如下：</p>
 <h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>下载 <a href="https://maven.apache.org/download.cgi" target="_blank" rel="external">Maven</a>, 并解压到目录 <code>/usr/local/apache-maven-3.3.9</code></p>
-<p>###设置环境变量<br><code>vi ~/.bash_profile</code>打开terminal 添加：</p>
-<pre><code>export M2_HOME=/usr/local/apache-maven-3.3.9
-export M2=$M2_HOME/bin
-export PATH=$PATH:$M2
-</code></pre><p>保存后执行命令 <code>source ~/.bash_profile</code> 让bash_profile生效。</p>
-<p>在terminal中通过<code>mvn -version</code>,显示如下，表明Maven安装成功。</p>
-<pre><code>Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-11T00:41:47+08:00)
-Maven home: /usr/local/apache-maven-3.3.9
-Java version: 1.8.0_91, vendor: Oracle Corporation
-Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre
-Default locale: zh_CN, platform encoding: UTF-8
-OS name: &quot;mac os x&quot;, version: &quot;10.11.4&quot;, arch: &quot;x86_64&quot;, family: &quot;mac&quot;
-</code></pre><h2 id="ExtJS-library安装"><a href="#ExtJS-library安装" class="headerlink" title="ExtJS library安装"></a>ExtJS library安装</h2><p><a href="http://docs.sencha.com/" target="_blank" rel="external">ExtJS 2.2</a></p>
-<h2 id="Hadoop安装配置，以及测试"><a href="#Hadoop安装配置，以及测试" class="headerlink" title="Hadoop安装配置，以及测试"></a>Hadoop安装配置，以及测试</h2><p>###准备条件 ssh keys<br>除了java环境的配置，还需要SSH keys。首先需要打开<em>远程登录（Remote Login）</em>,可以在 <em>系统偏好设置-&gt;共享-&gt;远程登录 勾选</em> 。通过<code>ssh localhost</code>，如果提示输入账号密码，说明ssh设置成功，如果没有，通过 </p>
-<pre><code>ssh-keygen -t rsa -P &quot;&quot;
-</code></pre><p>设置，并且避免每次输入密码，授权到本地：</p>
-<pre><code>cat $HOME/.ssh/id_rsa.pub &gt;&gt; $HOME/.ssh/authorized_keys
-</code></pre><h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>通过homebrew安装：</p>
-<pre><code>brew install hadoop
-</code></pre><p>下载完后，在路径 <code>/usr/local/</code>中下载到Cellar文件夹，具体目录是<code>/usr/local/Cellar/hadoop/2.7.2</code></p>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>打开terminal 添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> M2_HOME=/usr/<span class="built_in">local</span>/apache-maven-3.3.9</span><br><span class="line"><span class="built_in">export</span> M2=<span class="variable">$M2_HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$M2</span></span><br></pre></td></tr></table></figure></p>
+<p>保存后执行命令,让bash_profile生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+<p>在terminal中通过命令<code>mvn -version</code>,显示如下，表明Maven安装成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ mvn -version</span><br><span class="line">Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-11T00:41:47+08:00)</span><br><span class="line">Maven home: /usr/<span class="built_in">local</span>/apache-maven-3.3.9</span><br><span class="line">Java version: 1.8.0_91, vendor: Oracle Corporation</span><br><span class="line">Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre</span><br><span class="line">Default locale: zh_CN, platform encoding: UTF-8</span><br><span class="line">OS name: <span class="string">"mac os x"</span>, version: <span class="string">"10.11.4"</span>, arch: <span class="string">"x86_64"</span>, family: <span class="string">"mac"</span></span><br></pre></td></tr></table></figure>
+<h2 id="ExtJS-library安装"><a href="#ExtJS-library安装" class="headerlink" title="ExtJS library安装"></a>ExtJS library安装</h2><p><a href="http://docs.sencha.com/" target="_blank" rel="external">ExtJS 2.2</a></p>
+<h2 id="Hadoop安装配置，以及测试"><a href="#Hadoop安装配置，以及测试" class="headerlink" title="Hadoop安装配置，以及测试"></a>Hadoop安装配置，以及测试</h2><h3 id="准备条件-ssh-keys"><a href="#准备条件-ssh-keys" class="headerlink" title="准备条件 ssh keys"></a>准备条件 ssh keys</h3><p>除了java环境的配置，还需要SSH keys。首先需要打开<em>远程登录（Remote Login）</em>,可以在 <em>系统偏好设置-&gt;共享-&gt;远程登录 勾选</em> 。通过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh localhost</span><br></pre></td></tr></table></figure></p>
+<p>如果提示输入账号密码，说明ssh设置成功，如果没有，通过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -P <span class="string">""</span></span><br></pre></td></tr></table></figure></p>
+<p>设置，并且避免每次输入密码，授权到本地：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat <span class="variable">$HOME</span>/.ssh/id_rsa.pub &gt;&gt; <span class="variable">$HOME</span>/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></p>
+<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>通过homebrew安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install hadoop</span><br></pre></td></tr></table></figure></p>
+<p>下载完后，在路径 <code>/usr/local/</code>中下载到Cellar文件夹，具体目录是<code>/usr/local/Cellar/hadoop/2.7.2</code></p>
 <h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>hadoop的所有组件都是通过xml文件来配置，路径如下：<code>/usr/local/Cellar/hadoop/2.7.2/libexec/etc/hadoop</code>，MapReduce配置在 <em>mapred-site.xml</em>，HDFS配置在 <em>hdfs-site.xml</em>，公共参数在 <em>core-site.xml</em> 中，hadoop环境参数在 <em>hadoop-env.sh</em> 中。<br>需要的配置参数如下：</p>
-<blockquote>
-<p>hadoop-env.sh</p>
-</blockquote>
-<p>在 <code>export HADOOP_OPTS=</code>下面添加如下：</p>
-<pre><code>export HADOOP_OPTS=&quot;$HADOOP_OPTS -Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk&quot;
-</code></pre><blockquote>
-<p>core-site.xml</p>
-</blockquote>
-<p>note:fs.default.name当前设置为localhost是因为本地调试的目的，如果在网络中设置多节点，需要设置为：<code>hdfs://&lt;ComputerName&gt;.local:9000</code>。获取你本机的名字，可以通过<em>系统偏好设置（System Preferences） -&gt; 共享（Sharing）</em>，获取本机名。</p>
-<pre><code>&lt;configuration&gt;
-    &lt;property&gt;
-        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
-           &lt;value&gt;/tmp/hadoop-${user.name}&lt;/value&gt;
-           &lt;description&gt;A base for other temporary directories.&lt;/description&gt;
-     &lt;/property&gt; 
-    &lt;property&gt;
-           &lt;name&gt;fs.default.name&lt;/name&gt;
-           &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
-     &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre><blockquote>
-<p>hdfs-site.xml</p>
-</blockquote>
-<p>Hadoop Distributed File System，Hadoop分布式文件系统参数，配置参数在这个文件中，配置如下：</p>
-<pre><code>&lt;configuration&gt;
-    &lt;property&gt;
-           &lt;name&gt;dfs.replication&lt;/name&gt;
-        &lt;value&gt;1&lt;/value&gt;
-      &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre><blockquote>
-<p>mapred-site.xml</p>
-</blockquote>
-<p>mapreduce配置在这个文件中，配置如下：</p>
-<pre><code>&lt;configuration&gt;
-    &lt;property&gt;
-           &lt;name&gt;mapred.job.tracker&lt;/name&gt;
-        &lt;value&gt;localhost:9001&lt;/value&gt;
-      &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre><p>###基本安装成功<br>开始运行daemons之前，需要先格式化新安装的HDFS，格式化通过创建存储路径和初始元数据来创建一个新的文件系统。</p>
-<pre><code>hadoop namenode -format
-</code></pre><p>确认依然登录在localhost，<code>start-dfs.sh</code> 启动HDFS，<code>$ start-mapred.sh</code> 启动map-reduce，<code>start-all.sh</code>启动所有。</p>
+<h4 id="hadoop-env-sh"><a href="#hadoop-env-sh" class="headerlink" title="hadoop-env.sh"></a>hadoop-env.sh</h4><p>在 <code>export HADOOP_OPTS=</code>下面添加如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HADOOP_OPTS=<span class="string">"<span class="variable">$HADOOP_OPTS</span> -Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h4><p>note:fs.default.name当前设置为localhost是因为本地调试的目的，如果在网络中设置多节点，需要设置为：<code>hdfs://&lt;ComputerName&gt;.local:9000</code>。获取你本机的名字，可以通过<em>系统偏好设置（System Preferences） -&gt; 共享（Sharing）</em>，获取本机名。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">value</span>&gt;</span>/tmp/hadoop-$&#123;user.name&#125;<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">description</span>&gt;</span>A base for other temporary directories.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">property</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.default.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h4><p>Hadoop Distributed File System，Hadoop分布式文件系统参数，配置参数在这个文件中，配置如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h4><p>mapreduce配置在这个文件中，配置如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.job.tracker<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">value</span>&gt;</span>localhost:9001<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="基本安装成功"><a href="#基本安装成功" class="headerlink" title="基本安装成功"></a>基本安装成功</h3><p>开始运行daemons之前，需要先格式化新安装的HDFS，格式化通过创建存储路径和初始元数据来创建一个新的文件系统。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoop namenode -format</span><br></pre></td></tr></table></figure></p>
+<p>确认依然登录在localhost，<code>start-dfs.sh</code> 启动HDFS，<code>$ start-mapred.sh</code> 启动map-reduce，<code>start-all.sh</code>启动所有。</p>
 <h3 id="监控："><a href="#监控：" class="headerlink" title="监控："></a>监控：</h3><p>HDFS Administrator : <a href="http://localhost:50070" target="_blank" rel="external">http://localhost:50070</a></p>
 <p>Task Tracker : <a href="http://localhost:50060" target="_blank" rel="external">http://localhost:50060</a></p>
 <p>MapReduce Administrator : <a href="http://localhost:50030" target="_blank" rel="external">http://localhost:50030</a></p>
 <h2 id="pig安装"><a href="#pig安装" class="headerlink" title="pig安装"></a>pig安装</h2><p>###下载<br>在<a href="http://mirror.bit.edu.cn/apache/pig/" target="_blank" rel="external">http://mirror.bit.edu.cn/apache/pig/</a>中下载相应版本，比如pig-0.15.0，下载解压到 <code>/usr/local/</code>中</p>
-<p>###环境变量设置<br><code>vi ~/.bash_profile</code>在bash_profile中添加</p>
-<pre><code>export PIG_HOME=/usr/local/pig-0.15.0
-export PATH=$PATH:$PIG_HOME/bin
-</code></pre><p><code>source ~/.bash_profile</code>，让bash_profile立即生效，在terminal输入<code>pig -help</code>，查看pig是否可用。</p>
+<h3 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>在bash_profile中添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PIG_HOME=/usr/<span class="built_in">local</span>/pig-0.15.0</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$PIG_HOME</span>/bin</span><br></pre></td></tr></table></figure></p>
+<p>通过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+<p>让bash_profile立即生效，在terminal输入<code>pig -help</code>，查看pig是否可用。</p>
 <h2 id="Oozie安装"><a href="#Oozie安装" class="headerlink" title="Oozie安装"></a>Oozie安装</h2><p><a href="https://oozie.apache.org/docs/4.2.0/AG_Install.html" target="_blank" rel="external">Oozie安装配置文档</a>介绍了Oozie安装配置的详细参数，</p>
-<p>###building Oozie</p>
-<p>###Server Installation</p>
-<p>###Client Installation</p>
-<p>##内容参考<br><a href="http://www.ifzer.com/2014/10/31/how_to_install_hadoop_on_mac_ox_x/" target="_blank" rel="external">如何在MacOSX上安装Hadoop(how to install hadoop on mac os x</a></p>
+<h3 id="building-Oozie"><a href="#building-Oozie" class="headerlink" title="building Oozie"></a>building Oozie</h3><h3 id="Server-Installation"><a href="#Server-Installation" class="headerlink" title="Server Installation"></a>Server Installation</h3><h3 id="Client-Installation"><a href="#Client-Installation" class="headerlink" title="Client Installation"></a>Client Installation</h3><h2 id="内容参考"><a href="#内容参考" class="headerlink" title="内容参考"></a>内容参考</h2><p><a href="http://www.ifzer.com/2014/10/31/how_to_install_hadoop_on_mac_ox_x/" target="_blank" rel="external">如何在MacOSX上安装Hadoop(how to install hadoop on mac os x</a></p>
 <p><a href="http://shayanmasood.com/blog/how-to-setup-hadoop-on-mac-os-x-10-9-mavericks/" target="_blank" rel="external">HOW TO SETUP HADOOP ON MAC OS X 10.9 MAVERICKS</a></p>
 <p><a href="http://www.rohitmenon.com/index.php/apache-oozie-installation/" target="_blank" rel="external">Apache Oozie Installation</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/19/Oozie安装记录/" data-id="cioe88z830000uaakthgs6ujt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/19/Oozie安装记录/" data-id="cioe9d0qt0001ybakvq9xbx1m" class="article-share-link">Share</a>
       
       
     </footer>
