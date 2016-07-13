@@ -53,19 +53,19 @@
 
 
 
-<meta name="description" content="Oozie简介博客简介近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正这篇博客简单介绍Oozie，作为了解和入门级的内容。
-什么是Oozie？如下是oozie官方首页https://oozie.a">
+<meta name="description" content="博客简介近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正这篇博客简单介绍Oozie，作为了解和入门级的内容。
+什么是Oozie？如下是oozie官方首页https://oozie.apache.o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oozie系统研究（一）——Oozie简介">
 <meta property="og:url" content="http://yoursite.com/2016/07/13/oozie简介/index.html">
 <meta property="og:site_name" content="小强的博客">
-<meta property="og:description" content="Oozie简介博客简介近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正这篇博客简单介绍Oozie，作为了解和入门级的内容。
-什么是Oozie？如下是oozie官方首页https://oozie.a">
-<meta property="og:updated_time" content="2016-07-13T14:08:28.000Z">
+<meta property="og:description" content="博客简介近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正这篇博客简单介绍Oozie，作为了解和入门级的内容。
+什么是Oozie？如下是oozie官方首页https://oozie.apache.o">
+<meta property="og:updated_time" content="2016-07-13T14:10:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oozie系统研究（一）——Oozie简介">
-<meta name="twitter:description" content="Oozie简介博客简介近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正这篇博客简单介绍Oozie，作为了解和入门级的内容。
-什么是Oozie？如下是oozie官方首页https://oozie.a">
+<meta name="twitter:description" content="博客简介近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正这篇博客简单介绍Oozie，作为了解和入门级的内容。
+什么是Oozie？如下是oozie官方首页https://oozie.apache.o">
 
 
 
@@ -247,13 +247,8 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="Oozie简介"><a href="#Oozie简介" class="headerlink" title="Oozie简介"></a>Oozie简介</h1><h2 id="博客简介"><a href="#博客简介" class="headerlink" title="博客简介"></a>博客简介</h2><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正<br>这篇博客简单介绍Oozie，作为了解和入门级的内容。</p>
-<h2 id="什么是Oozie？"><a href="#什么是Oozie？" class="headerlink" title="什么是Oozie？"></a>什么是Oozie？</h2><p>如下是oozie官方首页<a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a>的概述说明：</p>
-<p>Oozie is a workflow scheduler system to manage Apache Hadoop jobs.</p>
-<p>Oozie Workflow jobs are Directed Acyclical Graphs (DAGs) of actions.</p>
-<p>Oozie Coordinator jobs are recurrent Oozie Workflow jobs triggered by time (frequency) and data availabilty.</p>
-<p>Oozie is integrated with the rest of the Hadoop stack supporting several types of Hadoop jobs out of the box (such as Java map-reduce, Streaming map-reduce, Pig, Hive, Sqoop and Distcp) as well as system specific jobs (such as Java programs and shell scripts).</p>
-<p>Oozie is a scalable, reliable and extensible system.</p>
+        <span itemprop="articleBody"><h2 id="博客简介"><a href="#博客简介" class="headerlink" title="博客简介"></a>博客简介</h2><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正<br>这篇博客简单介绍Oozie，作为了解和入门级的内容。</p>
+<h2 id="什么是Oozie？"><a href="#什么是Oozie？" class="headerlink" title="什么是Oozie？"></a>什么是Oozie？</h2><p>如下是oozie官方首页<a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a>的概述说明：<br>Oozie is a workflow scheduler system to manage Apache Hadoop jobs.<br>Oozie Workflow jobs are Directed Acyclical Graphs (DAGs) of actions.<br>Oozie Coordinator jobs are recurrent Oozie Workflow jobs triggered by time (frequency) and data availabilty.<br>Oozie is integrated with the rest of the Hadoop stack supporting several types of Hadoop jobs out of the box (such as Java map-reduce, Streaming map-reduce, Pig, Hive, Sqoop and Distcp) as well as system specific jobs (such as Java programs and shell scripts).<br>Oozie is a scalable, reliable and extensible system.</p>
 <p>可以简单概述Oozie是什么：</p>
 <ul>
 <li>Oozie是管理hadoop作业的调度系统</li>
@@ -265,8 +260,9 @@
 <h2 id="Oozie原理及特点"><a href="#Oozie原理及特点" class="headerlink" title="Oozie原理及特点"></a>Oozie原理及特点</h2><p>Oozie是一种Java Web应用程序，它运行在Java servlet容器——即Tomcat——中，并使用数据库来存储以下内容：</p>
 <ul>
 <li>工作流定义</li>
-<li>当前运行的工作流实例，包括实例的状态和变量<br>Oozie的默认数据库是derby，但是可以配置成mysql。<br>Oozie的用DAG（有向无环图 Direct Acyclic Graph）来定义工作流，DAG指定了工作流执行的顺序。Oozie使用hPDL（一种xml流程定义语言）来描述工作流。</li>
+<li>当前运行的工作流实例，包括实例的状态和变量</li>
 </ul>
+<p>Oozie的默认数据库是derby，但是可以配置成mysql。<br>Oozie的用DAG（有向无环图 Direct Acyclic Graph）来定义工作流，DAG指定了工作流执行的顺序。Oozie使用hPDL（一种xml流程定义语言）来描述工作流。</p>
 <h2 id="Oozie核心组件"><a href="#Oozie核心组件" class="headerlink" title="Oozie核心组件"></a>Oozie核心组件</h2><p>hPDL是一种很简洁的语言(xml)，hPDL是一种很简洁的语言，只会使用少数流程控制和动作节点。控制节点会定义执行的流程，并包含工作流的起点和终点（start、end和fail节点）以及控制工作流执行路径的机制（decision、fork和join节点），动作节点是一些机制，通过它们工作流会触发执行计算或者处理任务。</p>
 <h3 id="控制流节点"><a href="#控制流节点" class="headerlink" title="控制流节点"></a>控制流节点</h3><ul>
 <li>start</li>
@@ -442,7 +438,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Oozie简介"><span class="nav-number">1.</span> <span class="nav-text">Oozie简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客简介"><span class="nav-number">1.1.</span> <span class="nav-text">博客简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Oozie？"><span class="nav-number">1.2.</span> <span class="nav-text">什么是Oozie？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie原理及特点"><span class="nav-number">1.3.</span> <span class="nav-text">Oozie原理及特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie核心组件"><span class="nav-number">1.4.</span> <span class="nav-text">Oozie核心组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#控制流节点"><span class="nav-number">1.4.1.</span> <span class="nav-text">控制流节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务节点"><span class="nav-number">1.4.2.</span> <span class="nav-text">任务节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考内容"><span class="nav-number">1.5.</span> <span class="nav-text">参考内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客简介"><span class="nav-number">1.</span> <span class="nav-text">博客简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Oozie？"><span class="nav-number">2.</span> <span class="nav-text">什么是Oozie？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie原理及特点"><span class="nav-number">3.</span> <span class="nav-text">Oozie原理及特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie核心组件"><span class="nav-number">4.</span> <span class="nav-text">Oozie核心组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#控制流节点"><span class="nav-number">4.1.</span> <span class="nav-text">控制流节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务节点"><span class="nav-number">4.2.</span> <span class="nav-text">任务节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考内容"><span class="nav-number">5.</span> <span class="nav-text">参考内容</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
