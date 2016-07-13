@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Oozie," />
+  <meta name="keywords" content="Oozie,hadoop," />
 
 
 
@@ -53,37 +53,25 @@
 
 
 
-<meta name="description" content="Mac Oozie安装记录说明用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考
-Oozie环境依赖
+<meta name="description" content="hadoop集群博客说明近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。
+Oozie简介Oozie环境依赖
 Unix box (tested on Mac OS X and Linux)
-Java JDK 1.6+
-Maven 3.0.1+
-Hadoop 0.20.2+
-Pig 0.7+
-ExtJS library (optional, to enable Oozie webcon">
+Ja">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oozie安装记录">
+<meta property="og:title" content="Oozie系统研究（一）——搭建hadoop集群">
 <meta property="og:url" content="http://yoursite.com/2016/05/19/Oozie安装记录/index.html">
 <meta property="og:site_name" content="小强的博客">
-<meta property="og:description" content="Mac Oozie安装记录说明用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考
-Oozie环境依赖
+<meta property="og:description" content="hadoop集群博客说明近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。
+Oozie简介Oozie环境依赖
 Unix box (tested on Mac OS X and Linux)
-Java JDK 1.6+
-Maven 3.0.1+
-Hadoop 0.20.2+
-Pig 0.7+
-ExtJS library (optional, to enable Oozie webcon">
-<meta property="og:updated_time" content="2016-05-24T02:18:52.000Z">
+Ja">
+<meta property="og:updated_time" content="2016-07-13T12:42:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oozie安装记录">
-<meta name="twitter:description" content="Mac Oozie安装记录说明用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考
-Oozie环境依赖
+<meta name="twitter:title" content="Oozie系统研究（一）——搭建hadoop集群">
+<meta name="twitter:description" content="hadoop集群博客说明近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。
+Oozie简介Oozie环境依赖
 Unix box (tested on Mac OS X and Linux)
-Java JDK 1.6+
-Maven 3.0.1+
-Hadoop 0.20.2+
-Pig 0.7+
-ExtJS library (optional, to enable Oozie webcon">
+Ja">
 
 
 
@@ -95,7 +83,7 @@ ExtJS library (optional, to enable Oozie webcon">
   };
 </script>
 
-  <title> Oozie安装记录 | 小强的博客 </title>
+  <title> Oozie系统研究（一）——搭建hadoop集群 | 小强的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -232,7 +220,7 @@ ExtJS library (optional, to enable Oozie webcon">
             
             
               
-                Oozie安装记录
+                Oozie系统研究（一）——搭建hadoop集群
               
             
           </h1>
@@ -265,8 +253,8 @@ ExtJS library (optional, to enable Oozie webcon">
       
 
       
-        <span itemprop="articleBody"><h1 id="Mac-Oozie安装记录"><a href="#Mac-Oozie安装记录" class="headerlink" title="Mac Oozie安装记录"></a>Mac Oozie安装记录</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考</p>
-<h2 id="Oozie环境依赖"><a href="#Oozie环境依赖" class="headerlink" title="Oozie环境依赖"></a>Oozie环境依赖</h2><ul>
+        <span itemprop="articleBody"><h1 id="hadoop集群"><a href="#hadoop集群" class="headerlink" title="hadoop集群"></a>hadoop集群</h1><h2 id="博客说明"><a href="#博客说明" class="headerlink" title="博客说明"></a>博客说明</h2><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。</p>
+<h2 id="Oozie简介"><a href="#Oozie简介" class="headerlink" title="Oozie简介"></a>Oozie简介</h2><h2 id="Oozie环境依赖"><a href="#Oozie环境依赖" class="headerlink" title="Oozie环境依赖"></a>Oozie环境依赖</h2><ul>
 <li>Unix box (tested on Mac OS X and Linux)</li>
 <li>Java JDK 1.6+</li>
 <li>Maven 3.0.1+</li>
@@ -346,7 +334,7 @@ ExtJS library (optional, to enable Oozie webcon">
       
         <div class="post-tags">
           
-            <a href="/tags/Oozie/" rel="tag">#Oozie</a>
+            <a href="/tags/Oozie-hadoop/" rel="tag">#Oozie,hadoop</a>
           
         </div>
       
@@ -429,7 +417,7 @@ ExtJS library (optional, to enable Oozie webcon">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -443,7 +431,7 @@ ExtJS library (optional, to enable Oozie webcon">
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -493,7 +481,7 @@ ExtJS library (optional, to enable Oozie webcon">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac-Oozie安装记录"><span class="nav-number">1.</span> <span class="nav-text">Mac Oozie安装记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">1.1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie环境依赖"><span class="nav-number">1.2.</span> <span class="nav-text">Oozie环境依赖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本机环境"><span class="nav-number">1.2.1.</span> <span class="nav-text">本机环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java安装以及环境变量设置"><span class="nav-number">1.3.</span> <span class="nav-text">Java安装以及环境变量设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven安装"><span class="nav-number">1.4.</span> <span class="nav-text">Maven安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">1.4.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置环境变量"><span class="nav-number">1.4.2.</span> <span class="nav-text">设置环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ExtJS-library安装"><span class="nav-number">1.5.</span> <span class="nav-text">ExtJS library安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop安装配置，以及测试"><span class="nav-number">1.6.</span> <span class="nav-text">Hadoop安装配置，以及测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备条件-ssh-keys"><span class="nav-number">1.6.1.</span> <span class="nav-text">准备条件 ssh keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装"><span class="nav-number">1.6.2.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境配置"><span class="nav-number">1.6.3.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-env-sh"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">hadoop-env.sh</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#core-site-xml"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">core-site.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hdfs-site-xml"><span class="nav-number">1.6.3.3.</span> <span class="nav-text">hdfs-site.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mapred-site-xml"><span class="nav-number">1.6.3.4.</span> <span class="nav-text">mapred-site.xml</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本安装成功"><span class="nav-number">1.6.4.</span> <span class="nav-text">基本安装成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监控："><span class="nav-number">1.6.5.</span> <span class="nav-text">监控：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pig安装"><span class="nav-number">1.7.</span> <span class="nav-text">pig安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-1"><span class="nav-number">1.7.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量设置"><span class="nav-number">1.7.2.</span> <span class="nav-text">环境变量设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie安装"><span class="nav-number">1.8.</span> <span class="nav-text">Oozie安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#building-Oozie"><span class="nav-number">1.8.1.</span> <span class="nav-text">building Oozie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Server-Installation"><span class="nav-number">1.8.2.</span> <span class="nav-text">Server Installation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Client-Installation"><span class="nav-number">1.8.3.</span> <span class="nav-text">Client Installation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容参考"><span class="nav-number">1.9.</span> <span class="nav-text">内容参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hadoop集群"><span class="nav-number">1.</span> <span class="nav-text">hadoop集群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客说明"><span class="nav-number">1.1.</span> <span class="nav-text">博客说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie简介"><span class="nav-number">1.2.</span> <span class="nav-text">Oozie简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie环境依赖"><span class="nav-number">1.3.</span> <span class="nav-text">Oozie环境依赖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本机环境"><span class="nav-number">1.3.1.</span> <span class="nav-text">本机环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java安装以及环境变量设置"><span class="nav-number">1.4.</span> <span class="nav-text">Java安装以及环境变量设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven安装"><span class="nav-number">1.5.</span> <span class="nav-text">Maven安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">1.5.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置环境变量"><span class="nav-number">1.5.2.</span> <span class="nav-text">设置环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ExtJS-library安装"><span class="nav-number">1.6.</span> <span class="nav-text">ExtJS library安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop安装配置，以及测试"><span class="nav-number">1.7.</span> <span class="nav-text">Hadoop安装配置，以及测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备条件-ssh-keys"><span class="nav-number">1.7.1.</span> <span class="nav-text">准备条件 ssh keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装"><span class="nav-number">1.7.2.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境配置"><span class="nav-number">1.7.3.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-env-sh"><span class="nav-number">1.7.3.1.</span> <span class="nav-text">hadoop-env.sh</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#core-site-xml"><span class="nav-number">1.7.3.2.</span> <span class="nav-text">core-site.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hdfs-site-xml"><span class="nav-number">1.7.3.3.</span> <span class="nav-text">hdfs-site.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mapred-site-xml"><span class="nav-number">1.7.3.4.</span> <span class="nav-text">mapred-site.xml</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本安装成功"><span class="nav-number">1.7.4.</span> <span class="nav-text">基本安装成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监控："><span class="nav-number">1.7.5.</span> <span class="nav-text">监控：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pig安装"><span class="nav-number">1.8.</span> <span class="nav-text">pig安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-1"><span class="nav-number">1.8.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量设置"><span class="nav-number">1.8.2.</span> <span class="nav-text">环境变量设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie安装"><span class="nav-number">1.9.</span> <span class="nav-text">Oozie安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#building-Oozie"><span class="nav-number">1.9.1.</span> <span class="nav-text">building Oozie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Server-Installation"><span class="nav-number">1.9.2.</span> <span class="nav-text">Server Installation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Client-Installation"><span class="nav-number">1.9.3.</span> <span class="nav-text">Client Installation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容参考"><span class="nav-number">1.10.</span> <span class="nav-text">内容参考</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

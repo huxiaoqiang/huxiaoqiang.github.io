@@ -196,6 +196,15 @@
 
     
     
+      
+      
+        
+        
+        
+      
+
+      
+    
 
     
       
@@ -219,8 +228,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/14/大数据工作流模式/" itemprop="url">
-                  大数据工作流模式
+                <a class="post-title-link" href="/2016/07/13/oozie简介/" itemprop="url">
+                  Oozie系统研究（一）——Oozie简介
                 </a>
               
             
@@ -230,8 +239,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-06-14T00:00:00+08:00" content="2016-06-14">
-              2016-06-14
+            <time itemprop="dateCreated" datetime="2016-07-13T19:22:14+08:00" content="2016-07-13">
+              2016-07-13
             </time>
           </span>
 
@@ -257,166 +266,46 @@
         
           <span itemprop="articleBody">
             
-              <h1 id="大数据工作流模式"><a href="#大数据工作流模式" class="headerlink" title="大数据工作流模式"></a>大数据工作流模式</h1><p>工作流模式大致分为</p>
+              <h1 id="Oozie简介"><a href="#Oozie简介" class="headerlink" title="Oozie简介"></a>Oozie简介</h1><h2 id="博客简介"><a href="#博客简介" class="headerlink" title="博客简介"></a>博客简介</h2><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正<br>这篇博客简单介绍Oozie，作为了解和入门级的内容。</p>
+<h2 id="什么是Oozie？"><a href="#什么是Oozie？" class="headerlink" title="什么是Oozie？"></a>什么是Oozie？</h2><p>如下是oozie官方首页<a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a>的概述说明：</p>
+<p>Oozie is a workflow scheduler system to manage Apache Hadoop jobs.</p>
+<p>Oozie Workflow jobs are Directed Acyclical Graphs (DAGs) of actions.</p>
+<p>Oozie Coordinator jobs are recurrent Oozie Workflow jobs triggered by time (frequency) and data availabilty.</p>
+<p>Oozie is integrated with the rest of the Hadoop stack supporting several types of Hadoop jobs out of the box (such as Java map-reduce, Streaming map-reduce, Pig, Hive, Sqoop and Distcp) as well as system specific jobs (such as Java programs and shell scripts).</p>
+<p>Oozie is a scalable, reliable and extensible system.</p>
+<p>可以简单概述Oozie是什么：</p>
 <ul>
-<li>控制 control</li>
-<li>资源 resource</li>
-<li>数据 data</li>
-<li>异常处理 Exception Handling</li>
+<li>Oozie是管理hadoop作业的调度系统</li>
+<li>Oozie的工作流作业是一系列动作的有向无环图（DAG）</li>
+<li>Oozie协调作业是通过时间（频率）和有效数据触发当前的Oozie工作流程</li>
+<li>Oozie支持各种hadoop作业，例如:java map-reduce、Streaming map-reduce、pig、hive、sqoop和distcp等等，也支持系统特定的作业，例如java程序和shell脚本。</li>
+<li>Oozie是一个可伸缩，可靠和可拓展的系统<br>下面详细介绍一下Oozie的原理和核心组件</li>
 </ul>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/19/Oozie安装记录/" itemprop="url">
-                  Oozie安装记录
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-05-19T19:22:14+08:00" content="2016-05-19">
-              2016-05-19
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <h1 id="Mac-Oozie安装记录"><a href="#Mac-Oozie安装记录" class="headerlink" title="Mac Oozie安装记录"></a>Mac Oozie安装记录</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>用本文档记录和总结我在本机上安装Oozie的过程，作为后面复习总结的参考</p>
-<h2 id="Oozie环境依赖"><a href="#Oozie环境依赖" class="headerlink" title="Oozie环境依赖"></a>Oozie环境依赖</h2><ul>
-<li>Unix box (tested on Mac OS X and Linux)</li>
-<li>Java JDK 1.6+</li>
-<li>Maven 3.0.1+</li>
-<li>Hadoop 0.20.2+</li>
-<li>Pig 0.7+</li>
-<li>ExtJS library (optional, to enable Oozie webconsole)</li>
-</ul>
-<h3 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h3><ul>
-<li>Mac OS 10.11.4 2.2GHz Intel Core i7</li>
-<li>Java:1.8.0 91 JRE:1.8.0_91-b14</li>
-<li>Apache Maven 3.3.9 </li>
-</ul>
-<h2 id="Java安装以及环境变量设置"><a href="#Java安装以及环境变量设置" class="headerlink" title="Java安装以及环境变量设置"></a>Java安装以及环境变量设置</h2><p>hadoop需要java版本在1.6及以上，在terminal中通过<code>jave -version</code>显示java版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ java -version</span><br><span class="line">java version <span class="string">"1.8.0_91"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_91-b14)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.91-b14, mixed mode)</span><br></pre></td></tr></table></figure></p>
-<h2 id="Maven安装"><a href="#Maven安装" class="headerlink" title="Maven安装"></a>Maven安装</h2><p>Oozie依赖Maven，要求版本在3.0.1及以上，配置安装过程如下：</p>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>下载 <a href="https://maven.apache.org/download.cgi" target="_blank" rel="external">Maven</a>, 并解压到目录 <code>/usr/local/apache-maven-3.3.9</code></p>
-<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<p>打开terminal 添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> M2_HOME=/usr/<span class="built_in">local</span>/apache-maven-3.3.9</span><br><span class="line"><span class="built_in">export</span> M2=<span class="variable">$M2_HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$M2</span></span><br></pre></td></tr></table></figure></p>
-<p>保存后执行命令,让bash_profile生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
-<p>在terminal中通过命令<code>mvn -version</code>,显示如下，表明Maven安装成功。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ mvn -version</span><br><span class="line">Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-11T00:41:47+08:00)</span><br><span class="line">Maven home: /usr/<span class="built_in">local</span>/apache-maven-3.3.9</span><br><span class="line">Java version: 1.8.0_91, vendor: Oracle Corporation</span><br><span class="line">Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre</span><br><span class="line">Default locale: zh_CN, platform encoding: UTF-8</span><br><span class="line">OS name: <span class="string">"mac os x"</span>, version: <span class="string">"10.11.4"</span>, arch: <span class="string">"x86_64"</span>, family: <span class="string">"mac"</span></span><br></pre></td></tr></table></figure>
-<h2 id="ExtJS-library安装"><a href="#ExtJS-library安装" class="headerlink" title="ExtJS library安装"></a>ExtJS library安装</h2><p><a href="http://docs.sencha.com/" target="_blank" rel="external">ExtJS 2.2</a></p>
-<h2 id="Hadoop安装配置，以及测试"><a href="#Hadoop安装配置，以及测试" class="headerlink" title="Hadoop安装配置，以及测试"></a>Hadoop安装配置，以及测试</h2><h3 id="准备条件-ssh-keys"><a href="#准备条件-ssh-keys" class="headerlink" title="准备条件 ssh keys"></a>准备条件 ssh keys</h3><p>除了java环境的配置，还需要SSH keys。首先需要打开<em>远程登录（Remote Login）</em>,可以在 <em>系统偏好设置-&gt;共享-&gt;远程登录 勾选</em> 。通过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh localhost</span><br></pre></td></tr></table></figure></p>
-<p>如果提示输入账号密码，说明ssh设置成功，如果没有，通过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -P <span class="string">""</span></span><br></pre></td></tr></table></figure></p>
-<p>设置，并且避免每次输入密码，授权到本地：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat <span class="variable">$HOME</span>/.ssh/id_rsa.pub &gt;&gt; <span class="variable">$HOME</span>/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></p>
-<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>由于暂时不知Oozie4.2.0是否支持hadoop最新版2.7.2（尚未找到有人成功安装），2.6.0是Oozie所支持的，所以，本次实验，我下载的是hadoop2.6.0，教育网下载地址为<a href="http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-2.6.0/" target="_blank" rel="external">hadoop2.6.0</a></p>
-<p>下载完后，解压到路径 <code>/usr/local/</code>下，</p>
-<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>hadoop的所有组件都是通过xml文件来配置，路径如下：<code>/usr/local/hadoop-2.6.0/etc/hadoop</code>，MapReduce配置在 <em>mapred-site.xml</em>，HDFS配置在 <em>hdfs-site.xml</em>，公共参数在 <em>core-site.xml</em> 中，hadoop环境参数在 <em>hadoop-env.sh</em> 中。<br>需要的配置参数如下：</p>
-<h4 id="hadoop-env-sh"><a href="#hadoop-env-sh" class="headerlink" title="hadoop-env.sh"></a>hadoop-env.sh</h4><p>在 <code>export HADOOP_OPTS=</code>下面添加如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HADOOP_OPTS=<span class="string">"<span class="variable">$HADOOP_OPTS</span> -Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="core-site-xml"><a href="#core-site-xml" class="headerlink" title="core-site.xml"></a>core-site.xml</h4><p>note:fs.default.name当前设置为localhost是因为本地调试的目的，如果在网络中设置多节点，需要设置为：<code>hdfs://&lt;ComputerName&gt;.local:9000</code>。获取你本机的名字，可以通过<em>系统偏好设置（System Preferences） -&gt; 共享（Sharing）</em>，获取本机名。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">value</span>&gt;</span>/tmp/hadoop-$&#123;user.name&#125;<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">description</span>&gt;</span>A base for other temporary directories.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">property</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.default.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="hdfs-site-xml"><a href="#hdfs-site-xml" class="headerlink" title="hdfs-site.xml"></a>hdfs-site.xml</h4><p>Hadoop Distributed File System，Hadoop分布式文件系统参数，配置参数在这个文件中，配置如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="mapred-site-xml"><a href="#mapred-site-xml" class="headerlink" title="mapred-site.xml"></a>mapred-site.xml</h4><p>mapreduce配置在这个文件中，配置如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.job.tracker<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">value</span>&gt;</span>localhost:9001<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="基本安装成功"><a href="#基本安装成功" class="headerlink" title="基本安装成功"></a>基本安装成功</h3><p>开始运行daemons之前，需要先格式化新安装的HDFS，格式化通过创建存储路径和初始元数据来创建一个新的文件系统。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoop namenode -format</span><br></pre></td></tr></table></figure></p>
-<p>确认依然登录在localhost，<code>start-dfs.sh</code> 启动HDFS，<code>$ start-mapred.sh</code> 启动map-reduce，<code>start-all.sh</code>启动所有。</p>
-<h3 id="监控："><a href="#监控：" class="headerlink" title="监控："></a>监控：</h3><p>HDFS Administrator : <a href="http://localhost:50070" target="_blank" rel="external">http://localhost:50070</a></p>
-<p>Task Tracker : <a href="http://localhost:50060" target="_blank" rel="external">http://localhost:50060</a></p>
-<p>MapReduce Administrator : <a href="http://localhost:50030" target="_blank" rel="external">http://localhost:50030</a></p>
-<h2 id="pig安装"><a href="#pig安装" class="headerlink" title="pig安装"></a>pig安装</h2><h3 id="下载-1"><a href="#下载-1" class="headerlink" title="下载"></a>下载</h3><p>在<a href="http://mirror.bit.edu.cn/apache/pig/" target="_blank" rel="external">http://mirror.bit.edu.cn/apache/pig/</a>中下载相应版本，比如pig-0.15.0，下载解压到 <code>/usr/local/</code>中</p>
-<h3 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<p>在bash_profile中添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PIG_HOME=/usr/<span class="built_in">local</span>/pig-0.15.0</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$PIG_HOME</span>/bin</span><br></pre></td></tr></table></figure></p>
-<p>通过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
-<p>让bash_profile立即生效，在terminal输入<code>pig -help</code>，查看pig是否可用。</p>
-<h2 id="Oozie安装"><a href="#Oozie安装" class="headerlink" title="Oozie安装"></a>Oozie安装</h2><p>首先总结一下本次安装Oozie依赖的版本</p>
+<h2 id="Oozie原理及特点"><a href="#Oozie原理及特点" class="headerlink" title="Oozie原理及特点"></a>Oozie原理及特点</h2><p>Oozie是一种Java Web应用程序，它运行在Java servlet容器——即Tomcat——中，并使用数据库来存储以下内容：</p>
 <ul>
-<li>Java JDK 1.7.0_79</li>
-<li>Oozie 4.2.0</li>
-<li>Maven 3.3.9 </li>
-<li>Hadoop 2.6.0</li>
-<li>Pig 0.15.0<br>这里需要说明的是，JDK不能是1.8，1.8版本的java在build时，不能编译通过，Hadoop的版本参考网上的2.6.0，2.7版本的，我自己尝试了，编译的过程会出错，具体原因不详，我也是遇到很多坑了，后面才退到2.6.0版本，本地编译通过，没有问题。</li>
+<li>工作流定义</li>
+<li>当前运行的工作流实例，包括实例的状态和变量<br>Oozie的默认数据库是derby，但是可以配置成mysql。<br>Oozie的用DAG（有向无环图 Direct Acyclic Graph）来定义工作流，DAG指定了工作流执行的顺序。Oozie使用hPDL（一种xml流程定义语言）来描述工作流。</li>
 </ul>
-<p><a href="https://oozie.apache.org/docs/4.2.0/AG_Install.html" target="_blank" rel="external">Oozie安装配置文档</a>介绍了Oozie安装配置的详细参数，从<a href="http://mirror.bit.edu.cn/apache/oozie/4.2.0/" target="_blank" rel="external">Oozie-4.2.0</a>下载Oozie4.2.0。根据官网的介绍，Oozie安装过程分为下面三步</p>
-<h3 id="building-Oozie"><a href="#building-Oozie" class="headerlink" title="building Oozie"></a>building Oozie</h3><p>官网上介绍，通过<code>bin/mkdistro.sh</code>是最简单的build方式，但是不能直接简单运行，因为pom.xml中许多默认的软件版本，和我下载的版本不一样，需要做相应的改动，首先是修改目标java版本，如下，将targetJavaVersion改为1.7。<em>注意，不能用java1.8，Oozie应该不支持java1.8版本，build的过程会出错</em><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">targetJavaVersion</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">targetJavaVersion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">distMgmtSnapshotsName</span>&gt;</span>Apache Development Snapshot Repository<span class="tag">&lt;/<span class="name">distMgmtSnapshotsName</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">distMgmtSnapshotsUrl</span>&gt;</span>https://repository.apache.org/content/repositories/snapshots<span class="tag">&lt;/<span class="name">distMgmtSnapshotsUrl</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>然后进入到oozie/bin目录下，执行下面命令进行编译。<br>参数说明，由于hadoop使用的是2.6.0版本，所以需要参数hadoop-2，表明是hadoop版本2，其他的可选参数还有：hadoop-1、hadoop-3分别表示版本1和3， hadoop-0.23表示hadoop0.23。<br>由于Oozie4.2.0默认的hadoop-2是指的2.3.0，所以需要在后面指定hadoop的具体版本，`-Dhadoop.auth.version=2.6.0 -Ddistcp.version=2.6.指定hadoop具体版本为2.6.0。最后是pig版本，本机装的是0.15.0，直接指定就行。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh mkdistro.sh -DskipTests -Phadoop-2 -Dhadoop.auth.version=2.6.0 -Ddistcp.version=2.6.0 -Dpig.version=0.15.0</span><br></pre></td></tr></table></figure>
-<p>另外，根据需要，还可以指定如下相关软件版本：</p>
-<ul>
-<li>Dsqoop.version=<version> - default 1.4.3</version></li>
-<li>Dsqoop.classifier=<classifier> - default hadoop100</classifier></li>
-<li>Dtomcat.version=<version> - default 6.0.41</version></li>
-<li>Dopenjpa.version=<version> - default 2.2.2</version></li>
-<li>Dxerces.version=<version> - default 2.10.0</version></li>
-<li>Dcurator.version=<version> - default 2.5.0</version></li>
-<li>Dhive.version=<version> - default 0.13.1</version></li>
-<li>Dhbase.version=<version> - default 0.94.2</version></li>
+<h2 id="Oozie核心组件"><a href="#Oozie核心组件" class="headerlink" title="Oozie核心组件"></a>Oozie核心组件</h2><p>hPDL是一种很简洁的语言(xml)，hPDL是一种很简洁的语言，只会使用少数流程控制和动作节点。控制节点会定义执行的流程，并包含工作流的起点和终点（start、end和fail节点）以及控制工作流执行路径的机制（decision、fork和join节点），动作节点是一些机制，通过它们工作流会触发执行计算或者处理任务。</p>
+<h3 id="控制流节点"><a href="#控制流节点" class="headerlink" title="控制流节点"></a>控制流节点</h3><ul>
+<li>start</li>
+<li>end</li>
+<li>fail</li>
+<li>decision</li>
+<li>fork-join<h3 id="任务节点"><a href="#任务节点" class="headerlink" title="任务节点"></a>任务节点</h3></li>
+<li>HDFS<ul>
+<li>move, delete, mkdir, chmod, touchz, distcp</li>
 </ul>
-<p>好，运行脚本，发现build最后会报错，根据信息可以知道是build Oozie docs时出了错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Reactor Summary:</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] Apache Oozie Main .................................. SUCCESS [  1.196 s]</span><br><span class="line">[INFO] Apache Oozie Hadoop Utils hadoop-2-4.2.0 ........... SUCCESS [  2.443 s]</span><br><span class="line">[INFO] Apache Oozie Hadoop Distcp hadoop-2-4.2.0 .......... SUCCESS [  0.168 s]</span><br><span class="line">[INFO] Apache Oozie Hadoop Auth hadoop-2-4.2.0 Test ....... SUCCESS [  0.447 s]</span><br><span class="line">[INFO] Apache Oozie Hadoop Libs ........................... SUCCESS [  0.019 s]</span><br><span class="line">[INFO] Apache Oozie Client ................................ SUCCESS [ 27.203 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Oozie ....................... SUCCESS [02:57 min]</span><br><span class="line">[INFO] Apache Oozie Share Lib HCatalog .................... SUCCESS [  2.606 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Distcp ...................... SUCCESS [  0.854 s]</span><br><span class="line">[INFO] Apache Oozie Core .................................. SUCCESS [01:13 min]</span><br><span class="line">[INFO] Apache Oozie Share Lib Streaming ................... SUCCESS [  4.823 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Pig ......................... SUCCESS [  8.250 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Hive ........................ SUCCESS [  4.422 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Hive 2 ...................... SUCCESS [  3.725 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Sqoop ....................... SUCCESS [  2.466 s]</span><br><span class="line">[INFO] Apache Oozie Examples .............................. SUCCESS [  3.540 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Spark ....................... SUCCESS [  4.598 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib ............................. SUCCESS [  8.538 s]</span><br><span class="line">[INFO] Apache Oozie Docs .................................. FAILURE [ 27.363 s]</span><br><span class="line">[INFO] Apache Oozie WebApp ................................ SKIPPED</span><br><span class="line">[INFO] Apache Oozie Tools ................................. SKIPPED</span><br><span class="line">[INFO] Apache Oozie MiniOozie ............................. SKIPPED</span><br><span class="line">[INFO] Apache Oozie Distro ................................ SKIPPED</span><br><span class="line">[INFO] Apache Oozie ZooKeeper Security Tests .............. SKIPPED</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] BUILD FAILURE</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Total time: 05:55 min</span><br><span class="line">[INFO] Finished at: 2016-05-23T21:35:53+08:00</span><br><span class="line">[INFO] Final Memory: 77M/2303M</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br></pre></td></tr></table></figure></p>
-<p>通过google和stackoverflow，看到很多人的解决方案是将某一个repository注释掉，让mvn在build的过程中，不build相应的docs，编译就能成功，具体是将如下的repository注释掉，再去编译<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span>&gt;</span>Codehaus repository<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repository.codehaus.org/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">enabled</span>&gt;</span>false<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>应该就没有什么问题了，中间可能还是会显示一些error，但是最终会有如下info，表明终于build成功！<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Reactor Summary:</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] Apache Oozie Main .................................. SUCCESS [  1.045 s]</span><br><span class="line">[INFO] Apache Oozie Hadoop Utils hadoop-2-4.2.0 ........... SUCCESS [  2.414 s]</span><br><span class="line">[INFO] Apache Oozie Hadoop Distcp hadoop-2-4.2.0 .......... SUCCESS [  0.179 s]</span><br><span class="line">[INFO] Apache Oozie Hadoop Auth hadoop-2-4.2.0 Test ....... SUCCESS [  0.414 s]</span><br><span class="line">[INFO] Apache Oozie Hadoop Libs ........................... SUCCESS [  0.019 s]</span><br><span class="line">[INFO] Apache Oozie Client ................................ SUCCESS [01:01 min]</span><br><span class="line">[INFO] Apache Oozie Share Lib Oozie ....................... SUCCESS [  2.411 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib HCatalog .................... SUCCESS [  2.912 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Distcp ...................... SUCCESS [  0.889 s]</span><br><span class="line">[INFO] Apache Oozie Core .................................. SUCCESS [ 46.315 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Streaming ................... SUCCESS [  3.307 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Pig ......................... SUCCESS [  4.729 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Hive ........................ SUCCESS [  4.446 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Hive 2 ...................... SUCCESS [  3.837 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Sqoop ....................... SUCCESS [  1.719 s]</span><br><span class="line">[INFO] Apache Oozie Examples .............................. SUCCESS [  3.678 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib Spark ....................... SUCCESS [  4.162 s]</span><br><span class="line">[INFO] Apache Oozie Share Lib ............................. SUCCESS [  9.345 s]</span><br><span class="line">[INFO] Apache Oozie Docs .................................. SUCCESS [ 39.199 s]</span><br><span class="line">[INFO] Apache Oozie WebApp ................................ SUCCESS [04:03 min]</span><br><span class="line">[INFO] Apache Oozie Tools ................................. SUCCESS [  1.940 s]</span><br><span class="line">[INFO] Apache Oozie MiniOozie ............................. SUCCESS [  1.891 s]</span><br><span class="line">[INFO] Apache Oozie Distro ................................ SUCCESS [ 30.046 s]</span><br><span class="line">[INFO] Apache Oozie ZooKeeper Security Tests .............. SUCCESS [  9.368 s]</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] BUILD SUCCESS</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Total time: 08:00 min</span><br><span class="line">[INFO] Finished at: 2016-05-23T22:08:00+08:00</span><br><span class="line">[INFO] Final Memory: 139M/2961M</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">Oozie distro created, DATE[2016.05.23-13:59:58GMT] VC-REV[unavailable], available at [/usr/<span class="built_in">local</span>/oozie-4.2.0/distro/target]</span><br></pre></td></tr></table></figure></p>
-<h3 id="Server-Installation"><a href="#Server-Installation" class="headerlink" title="Server Installation"></a>Server Installation</h3><h3 id="Client-Installation"><a href="#Client-Installation" class="headerlink" title="Client Installation"></a>Client Installation</h3><h2 id="内容参考"><a href="#内容参考" class="headerlink" title="内容参考"></a>内容参考</h2><p><a href="http://www.ifzer.com/2014/10/31/how_to_install_hadoop_on_mac_ox_x/" target="_blank" rel="external">如何在MacOSX上安装Hadoop(how to install hadoop on mac os x</a></p>
-<p><a href="http://shayanmasood.com/blog/how-to-setup-hadoop-on-mac-os-x-10-9-mavericks/" target="_blank" rel="external">HOW TO SETUP HADOOP ON MAC OS X 10.9 MAVERICKS</a></p>
-<p><a href="http://www.rohitmenon.com/index.php/apache-oozie-installation/" target="_blank" rel="external">Apache Oozie Installation</a></p>
+</li>
+<li>Map-Reduce</li>
+<li>Pig</li>
+<li>Hive</li>
+<li>SSH</li>
+<li>Java</li>
+<li>shell</li>
+<li>spark</li>
+</ul>
+<h2 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h2><p><a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a><br><a href="http://www.infoq.com/cn/articles/introductionOozie?utm_source=infoq_en&amp;utm_medium=link_on_en_item&amp;utm_campaign=item_in_other_langs" target="_blank" rel="external">Oozie简介</a></p>
 
             
           </span>
@@ -480,7 +369,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -494,7 +383,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
