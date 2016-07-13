@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Oozie," />
+  <meta name="keywords" content="Oozie,hadoop," />
 
 
 
@@ -53,19 +53,22 @@
 
 
 
-<meta name="description" content="博客简介近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正这篇博客简单介绍Oozie，作为了解和入门级的内容。
-什么是Oozie？如下是oozie官方首页https://oozie.apache.o">
+<meta name="description" content="博客说明近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结， 方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。上一篇博客简要介绍了oozie，这篇博客开始介绍从0开始搭建hadoop集群。
+Oozie环境依赖
+Unix box (tested">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oozie系统研究（一）——Oozie简介">
-<meta property="og:url" content="http://yoursite.com/2016/07/13/oozie简介/index.html">
+<meta property="og:title" content="Oozie系统研究（二）——搭建hadoop集群">
+<meta property="og:url" content="http://yoursite.com/2016/05/19/hadoop集群搭建/index.html">
 <meta property="og:site_name" content="小强的博客">
-<meta property="og:description" content="博客简介近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正这篇博客简单介绍Oozie，作为了解和入门级的内容。
-什么是Oozie？如下是oozie官方首页https://oozie.apache.o">
-<meta property="og:updated_time" content="2016-07-13T14:10:50.000Z">
+<meta property="og:description" content="博客说明近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结， 方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。上一篇博客简要介绍了oozie，这篇博客开始介绍从0开始搭建hadoop集群。
+Oozie环境依赖
+Unix box (tested">
+<meta property="og:updated_time" content="2016-07-13T15:17:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oozie系统研究（一）——Oozie简介">
-<meta name="twitter:description" content="博客简介近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正这篇博客简单介绍Oozie，作为了解和入门级的内容。
-什么是Oozie？如下是oozie官方首页https://oozie.apache.o">
+<meta name="twitter:title" content="Oozie系统研究（二）——搭建hadoop集群">
+<meta name="twitter:description" content="博客说明近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结， 方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。上一篇博客简要介绍了oozie，这篇博客开始介绍从0开始搭建hadoop集群。
+Oozie环境依赖
+Unix box (tested">
 
 
 
@@ -77,7 +80,7 @@
   };
 </script>
 
-  <title> Oozie系统研究（一）——Oozie简介 | 小强的博客 </title>
+  <title> Oozie系统研究（二）——搭建hadoop集群 | 小强的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -214,7 +217,7 @@
             
             
               
-                Oozie系统研究（一）——Oozie简介
+                Oozie系统研究（二）——搭建hadoop集群
               
             
           </h1>
@@ -223,8 +226,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-07-13T19:22:14+08:00" content="2016-07-13">
-              2016-07-13
+            <time itemprop="dateCreated" datetime="2016-05-19T19:22:14+08:00" content="2016-05-19">
+              2016-05-19
             </time>
           </span>
 
@@ -247,42 +250,33 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="博客简介"><a href="#博客简介" class="headerlink" title="博客简介"></a>博客简介</h2><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正<br>这篇博客简单介绍Oozie，作为了解和入门级的内容。</p>
-<h2 id="什么是Oozie？"><a href="#什么是Oozie？" class="headerlink" title="什么是Oozie？"></a>什么是Oozie？</h2><p>如下是oozie官方首页<a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a>的概述说明：<br>Oozie is a workflow scheduler system to manage Apache Hadoop jobs.<br>Oozie Workflow jobs are Directed Acyclical Graphs (DAGs) of actions.<br>Oozie Coordinator jobs are recurrent Oozie Workflow jobs triggered by time (frequency) and data availabilty.<br>Oozie is integrated with the rest of the Hadoop stack supporting several types of Hadoop jobs out of the box (such as Java map-reduce, Streaming map-reduce, Pig, Hive, Sqoop and Distcp) as well as system specific jobs (such as Java programs and shell scripts).<br>Oozie is a scalable, reliable and extensible system.</p>
-<p>可以简单概述Oozie是什么：</p>
+        <span itemprop="articleBody"><h1 id="博客说明"><a href="#博客说明" class="headerlink" title="博客说明"></a>博客说明</h1><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结， 方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。<br>上一篇博客简要介绍了oozie，这篇博客开始介绍从0开始搭建hadoop集群。</p>
+<h1 id="Oozie环境依赖"><a href="#Oozie环境依赖" class="headerlink" title="Oozie环境依赖"></a>Oozie环境依赖</h1><ul>
+<li>Unix box (tested on Mac OS X and Linux)</li>
+<li>Java JDK 1.6+</li>
+<li>Maven 3.0.1+</li>
+<li>Hadoop 0.20.2+</li>
+<li>Pig 0.7+</li>
+<li>ExtJS library (optional, to enable Oozie webconsole)</li>
+</ul>
+<p>由于oozie对于依赖软件的版本要求很严格，最新版hadoop2.7.2尚未找到有人成功适配Oozie4.2.0，所以我选择的是hadoop2.6.0。java最新版是1.8，但是在尝试用1.8配置环境过程中，会因为版本问题出现bug，所以退回1.7，完美运行。ExtJS Library只允许用2.2版本，其他版本都不行。所以本次实验的环境如下：</p>
 <ul>
-<li>Oozie是管理hadoop作业的调度系统</li>
-<li>Oozie的工作流作业是一系列动作的有向无环图（DAG）</li>
-<li>Oozie协调作业是通过时间（频率）和有效数据触发当前的Oozie工作流程</li>
-<li>Oozie支持各种hadoop作业，例如:java map-reduce、Streaming map-reduce、pig、hive、sqoop和distcp等等，也支持系统特定的作业，例如java程序和shell脚本。</li>
-<li>Oozie是一个可伸缩，可靠和可拓展的系统<br>下面详细介绍一下Oozie的原理和核心组件</li>
-</ul>
-<h2 id="Oozie原理及特点"><a href="#Oozie原理及特点" class="headerlink" title="Oozie原理及特点"></a>Oozie原理及特点</h2><p>Oozie是一种Java Web应用程序，它运行在Java servlet容器——即Tomcat——中，并使用数据库来存储以下内容：</p>
-<ul>
-<li>工作流定义</li>
-<li>当前运行的工作流实例，包括实例的状态和变量</li>
-</ul>
-<p>Oozie的默认数据库是derby，但是可以配置成mysql。<br>Oozie的用DAG（有向无环图 Direct Acyclic Graph）来定义工作流，DAG指定了工作流执行的顺序。Oozie使用hPDL（一种xml流程定义语言）来描述工作流。</p>
-<h2 id="Oozie核心组件"><a href="#Oozie核心组件" class="headerlink" title="Oozie核心组件"></a>Oozie核心组件</h2><p>hPDL是一种很简洁的语言(xml)，hPDL是一种很简洁的语言，只会使用少数流程控制和动作节点。控制节点会定义执行的流程，并包含工作流的起点和终点（start、end和fail节点）以及控制工作流执行路径的机制（decision、fork和join节点），动作节点是一些机制，通过它们工作流会触发执行计算或者处理任务。</p>
-<h3 id="控制流节点"><a href="#控制流节点" class="headerlink" title="控制流节点"></a>控制流节点</h3><ul>
-<li>start</li>
-<li>end</li>
-<li>fail</li>
-<li>decision</li>
-<li>fork-join<h3 id="任务节点"><a href="#任务节点" class="headerlink" title="任务节点"></a>任务节点</h3></li>
-<li>HDFS<ul>
-<li>move, delete, mkdir, chmod, touchz, distcp</li>
-</ul>
+<li>Ubuntu 14.04 LTS</li>
+<li>Java JDK 1.7</li>
+<li>Hadoop 2.6.0</li>
+<li>ExtJS library 2.2</li>
+<li>Maven 3.3.9<h1 id="节点搭建"><a href="#节点搭建" class="headerlink" title="节点搭建"></a>节点搭建</h1>本次实验，使用了3个节点，一个namenode节点和两个datanode节点，分别记为datanode0和datanode1，hostname和ip分别为如下，并且设置三个节点的用户均为ubuntu：<br>节点名    | 内网ip地址<br>———-| ————-<br>namenode  | 166.111.81.154<br>datanode0 | 166.111.81.162<br>datanode1 | 166.111.81.164<h2 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h2>在配置的过程中，为了更加方便，不用去记ip，在~/.ssh/中新建一个配置文件config，配置如下：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Host namenode</span><br><span class="line">  HostName 166.111.81.154</span><br><span class="line">  User ubuntu</span><br><span class="line"></span><br><span class="line">Host datanode0</span><br><span class="line">  HostName 166.111.81.162</span><br><span class="line">  User ubuntu</span><br><span class="line"></span><br><span class="line">Host datanode1</span><br><span class="line">  HostName 166.111.81.164</span><br><span class="line">  User ubuntu</span><br></pre></td></tr></table></figure>
 </li>
-<li>Map-Reduce</li>
-<li>Pig</li>
-<li>Hive</li>
-<li>SSH</li>
-<li>Java</li>
-<li>shell</li>
-<li>spark</li>
 </ul>
-<h2 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h2><p><a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a><br><a href="http://www.infoq.com/cn/articles/introductionOozie?utm_source=infoq_en&amp;utm_medium=link_on_en_item&amp;utm_campaign=item_in_other_langs" target="_blank" rel="external">Oozie简介</a></p>
+<h3 id="配置PasswordLess-SSH"><a href="#配置PasswordLess-SSH" class="headerlink" title="配置PasswordLess SSH"></a>配置PasswordLess SSH</h3><p>hadoop集群节点间通讯通过ssh，namenode需要无密码连接到datanode，配置的步骤如下：<br>第一步：在namenode节点上生成Authentication SSH-Kegen Keys<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh-keygen -t rsa</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/ubuntu/.ssh/id_rsa): [Press enter key]</span><br><span class="line">Created directory <span class="string">'/home/ubuntu/.ssh'</span>.</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): [Press enter key]</span><br><span class="line">Enter same passphrase again: [Press enter key]</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/ubuntu/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/ubuntu/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">5f:ad:40:00:8a:d1:9b:99:b3:b0:f8:08:99:c3:ed:d3 ubuntu@namenode</span><br><span class="line">The key<span class="string">'s randomart image is:</span><br><span class="line">+--[ RSA 2048]----+</span><br><span class="line">|        ..oooE.++|</span><br><span class="line">|         o. o.o  |</span><br><span class="line">|          ..   . |</span><br><span class="line">|         o  . . o|</span><br><span class="line">|        S .  . + |</span><br><span class="line">|       . .    . o|</span><br><span class="line">|      . o o    ..|</span><br><span class="line">|       + +       |</span><br><span class="line">|        +.       |</span><br><span class="line">+-----------------+</span><br><span class="line"></span><br><span class="line">ubuntu@namenode:~$ cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span></span><br></pre></td></tr></table></figure></p>
+<p>第二步：在datanode节点上创建~/.ssh路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh ubuntu@datanode0 mkdir -p .ssh</span><br><span class="line">The authenticity of host <span class="string">'166.111.81.162 (166.111.81.162)'</span> can<span class="string">'t be established.</span><br><span class="line">RSA key fingerprint is 45:0e:28:11:d6:81:62:16:04:3f:db:38:02:la:22:4e.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added '</span>166.111.81.162<span class="string">' (ECDSA) to the list of known hosts.</span><br><span class="line">ubuntu@166.111.81.162'</span>s password: &lt;mark&gt;[Enter Your Password Here]&lt;/mark&gt;</span><br></pre></td></tr></table></figure></p>
+<p>datanode1同理</p>
+<p>第三步：上传public keys到datanode<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ cat .ssh/id_rsa.pub | ssh ubuntu@datanode0 <span class="string">'cat &gt;&gt; .ssh/authorized_keys'</span></span><br><span class="line"></span><br><span class="line">ubuntu@166.111.81.162<span class="string">'s password:&lt;mark&gt;[Enter Your Password Here]&lt;/mark&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>datanode1同理</p>
+<p>第四步：设置访问.ssh权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh ubuntu@datanode0 <span class="string">"chmod 700 .ssh; chmod 640 .ssh/authorized_keys"</span></span><br><span class="line"> </span><br><span class="line">ubuntu@166.111.81.162<span class="string">'s password:&lt;mark&gt;[Enter Your Password Here]&lt;/mark&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>datanode1同理<br>通过以上四步，就可以在namenode接单上直接<code>ssh datanode0</code>连接datanode节点了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh datanode0</span><br></pre></td></tr></table></figure></p>
+<p>## </p>
+<h1 id="Java安装"><a href="#Java安装" class="headerlink" title="Java安装"></a>Java安装</h1><h1 id="Maven安装"><a href="#Maven安装" class="headerlink" title="Maven安装"></a>Maven安装</h1><h1 id="hadoop-安装"><a href="#hadoop-安装" class="headerlink" title="hadoop 安装"></a>hadoop 安装</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/" target="_blank" rel="external">SSH Passwordless Login Using SSH Keygen in 5 Easy Steps</a><br><a href="http://insightdataengineering.com/blog/hadoopdevops/#ssh" target="_blank" rel="external">Spinning Up a Free Hadoop Cluster: Step by Step</a></p>
 </span>
       
     </div>
@@ -291,7 +285,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Oozie/" rel="tag">#Oozie</a>
+            <a href="/tags/Oozie-hadoop/" rel="tag">#Oozie,hadoop</a>
           
         </div>
       
@@ -300,13 +294,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/14/大数据工作流模式/" rel="next" title="大数据工作流模式">
-                <i class="fa fa-chevron-left"></i> 大数据工作流模式
-              </a>
-            
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/19/Oozie安装记录/" rel="prev" title="Oozie系统研究（一）——搭建hadoop集群">
+                Oozie系统研究（一）——搭建hadoop集群 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -438,7 +432,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客简介"><span class="nav-number">1.</span> <span class="nav-text">博客简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Oozie？"><span class="nav-number">2.</span> <span class="nav-text">什么是Oozie？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie原理及特点"><span class="nav-number">3.</span> <span class="nav-text">Oozie原理及特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie核心组件"><span class="nav-number">4.</span> <span class="nav-text">Oozie核心组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#控制流节点"><span class="nav-number">4.1.</span> <span class="nav-text">控制流节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务节点"><span class="nav-number">4.2.</span> <span class="nav-text">任务节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考内容"><span class="nav-number">5.</span> <span class="nav-text">参考内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#博客说明"><span class="nav-number">1.</span> <span class="nav-text">博客说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Oozie环境依赖"><span class="nav-number">2.</span> <span class="nav-text">Oozie环境依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#节点搭建"><span class="nav-number">3.</span> <span class="nav-text">节点搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh配置"><span class="nav-number">3.1.</span> <span class="nav-text">ssh配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置PasswordLess-SSH"><span class="nav-number">3.1.1.</span> <span class="nav-text">配置PasswordLess SSH</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java安装"><span class="nav-number">4.</span> <span class="nav-text">Java安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Maven安装"><span class="nav-number">5.</span> <span class="nav-text">Maven安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hadoop-安装"><span class="nav-number">6.</span> <span class="nav-text">hadoop 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
