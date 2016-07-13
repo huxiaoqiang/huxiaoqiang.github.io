@@ -422,114 +422,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/19/hadoop集群搭建/" itemprop="url">
-                  Oozie系统研究（二）——搭建hadoop集群
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-05-19T19:22:14+08:00" content="2016-05-19">
-              2016-05-19
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <h1 id="博客说明"><a href="#博客说明" class="headerlink" title="博客说明"></a>博客说明</h1><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结， 方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。<br>上一篇博客简要介绍了oozie，这篇博客开始介绍从0开始搭建hadoop集群。</p>
-<h1 id="Oozie环境依赖"><a href="#Oozie环境依赖" class="headerlink" title="Oozie环境依赖"></a>Oozie环境依赖</h1><ul>
-<li>Unix box (tested on Mac OS X and Linux)</li>
-<li>Java JDK 1.6+</li>
-<li>Maven 3.0.1+</li>
-<li>Hadoop 0.20.2+</li>
-<li>Pig 0.7+</li>
-<li>ExtJS library (optional, to enable Oozie webconsole)</li>
-</ul>
-<p>由于oozie对于依赖软件的版本要求很严格，最新版hadoop2.7.2尚未找到有人成功适配Oozie4.2.0，所以我选择的是hadoop2.6.0。java最新版是1.8，但是在尝试用1.8配置环境过程中，会因为版本问题出现bug，所以退回1.7，完美运行。ExtJS Library只允许用2.2版本，其他版本都不行。所以本次实验的环境如下：</p>
-<ul>
-<li>Ubuntu 14.04 LTS</li>
-<li>Java JDK 1.7</li>
-<li>Hadoop 2.6.0</li>
-<li>ExtJS library 2.2</li>
-<li>Maven 3.3.9</li>
-</ul>
-<h1 id="节点搭建"><a href="#节点搭建" class="headerlink" title="节点搭建"></a>节点搭建</h1><p>本次实验，使用了3个节点，一个namenode节点和两个datanode节点，分别记为datanode0和datanode1，hostname和ip分别为如下，并且设置三个节点的用户均为ubuntu：<br>节点名    | 内网ip地址    |<br>———-| ————- |<br>namenode  | 166.111.81.154|<br>datanode0 | 166.111.81.162|<br>datanode1 | 166.111.81.164|</p>
-<h2 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h2><p>在配置的过程中，为了更加方便，不用去记ip，在~/.ssh/中新建一个配置文件config，配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Host namenode</span><br><span class="line">  HostName 166.111.81.154</span><br><span class="line">  User ubuntu</span><br><span class="line"></span><br><span class="line">Host datanode0</span><br><span class="line">  HostName 166.111.81.162</span><br><span class="line">  User ubuntu</span><br><span class="line"></span><br><span class="line">Host datanode1</span><br><span class="line">  HostName 166.111.81.164</span><br><span class="line">  User ubuntu</span><br></pre></td></tr></table></figure></p>
-<h3 id="配置PasswordLess-SSH"><a href="#配置PasswordLess-SSH" class="headerlink" title="配置PasswordLess SSH"></a>配置PasswordLess SSH</h3><p>hadoop集群节点间通讯通过ssh，namenode需要无密码连接到datanode，配置的步骤如下：<br>第一步：在namenode节点上生成Authentication SSH-Kegen Keys<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh-keygen -t rsa</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/ubuntu/.ssh/id_rsa): [Press enter key]</span><br><span class="line">Created directory <span class="string">'/home/ubuntu/.ssh'</span>.</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): [Press enter key]</span><br><span class="line">Enter same passphrase again: [Press enter key]</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/ubuntu/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/ubuntu/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">5f:ad:40:00:8a:d1:9b:99:b3:b0:f8:08:99:c3:ed:d3 ubuntu@namenode</span><br><span class="line">The key<span class="string">'s randomart image is:</span><br><span class="line">+--[ RSA 2048]----+</span><br><span class="line">|        ..oooE.++|</span><br><span class="line">|         o. o.o  |</span><br><span class="line">|          ..   . |</span><br><span class="line">|         o  . . o|</span><br><span class="line">|        S .  . + |</span><br><span class="line">|       . .    . o|</span><br><span class="line">|      . o o    ..|</span><br><span class="line">|       + +       |</span><br><span class="line">|        +.       |</span><br><span class="line">+-----------------+</span><br><span class="line"></span><br><span class="line">ubuntu@namenode:~$ cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span></span><br></pre></td></tr></table></figure></p>
-<p>第二步：在datanode节点上创建~/.ssh路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh ubuntu@datanode0 mkdir -p .ssh</span><br><span class="line">The authenticity of host <span class="string">'166.111.81.162 (166.111.81.162)'</span> can<span class="string">'t be established.</span><br><span class="line">RSA key fingerprint is 45:0e:28:11:d6:81:62:16:04:3f:db:38:02:la:22:4e.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added '</span>166.111.81.162<span class="string">' (ECDSA) to the list of known hosts.</span><br><span class="line">ubuntu@166.111.81.162'</span>s password: &lt;mark&gt;[Enter Your Password Here]&lt;/mark&gt;</span><br></pre></td></tr></table></figure></p>
-<p>datanode1同理</p>
-<p>第三步：上传public keys到datanode<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ cat .ssh/id_rsa.pub | ssh ubuntu@datanode0 <span class="string">'cat &gt;&gt; .ssh/authorized_keys'</span></span><br><span class="line"></span><br><span class="line">ubuntu@166.111.81.162<span class="string">'s password:&lt;mark&gt;[Enter Your Password Here]&lt;/mark&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>datanode1同理</p>
-<p>第四步：设置访问.ssh权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh ubuntu@datanode0 <span class="string">"chmod 700 .ssh; chmod 640 .ssh/authorized_keys"</span></span><br><span class="line"> </span><br><span class="line">ubuntu@166.111.81.162<span class="string">'s password:&lt;mark&gt;[Enter Your Password Here]&lt;/mark&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>datanode1同理<br>通过以上四步，就可以在namenode接单上直接<code>ssh datanode0</code>连接datanode节点了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh datanode0</span><br></pre></td></tr></table></figure></p>
-<p>## </p>
-<h1 id="Java安装"><a href="#Java安装" class="headerlink" title="Java安装"></a>Java安装</h1><h1 id="Maven安装"><a href="#Maven安装" class="headerlink" title="Maven安装"></a>Maven安装</h1><h1 id="hadoop-安装"><a href="#hadoop-安装" class="headerlink" title="hadoop 安装"></a>hadoop 安装</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/" target="_blank" rel="external">SSH Passwordless Login Using SSH Keygen in 5 Easy Steps</a><br><a href="http://insightdataengineering.com/blog/hadoopdevops/#ssh" target="_blank" rel="external">Spinning Up a Free Hadoop Cluster: Step by Step</a></p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/05/19/Oozie安装记录/" itemprop="url">
                   Oozie系统研究（一）——搭建hadoop集群
                 </a>
@@ -641,6 +533,139 @@
 <h3 id="Server-Installation"><a href="#Server-Installation" class="headerlink" title="Server Installation"></a>Server Installation</h3><h3 id="Client-Installation"><a href="#Client-Installation" class="headerlink" title="Client Installation"></a>Client Installation</h3><h2 id="内容参考"><a href="#内容参考" class="headerlink" title="内容参考"></a>内容参考</h2><p><a href="http://www.ifzer.com/2014/10/31/how_to_install_hadoop_on_mac_ox_x/" target="_blank" rel="external">如何在MacOSX上安装Hadoop(how to install hadoop on mac os x</a></p>
 <p><a href="http://shayanmasood.com/blog/how-to-setup-hadoop-on-mac-os-x-10-9-mavericks/" target="_blank" rel="external">HOW TO SETUP HADOOP ON MAC OS X 10.9 MAVERICKS</a></p>
 <p><a href="http://www.rohitmenon.com/index.php/apache-oozie-installation/" target="_blank" rel="external">Apache Oozie Installation</a></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/19/hadoop集群搭建/" itemprop="url">
+                  Oozie系统研究（二）——搭建hadoop集群
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-05-19T19:22:14+08:00" content="2016-05-19">
+              2016-05-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="博客说明"><a href="#博客说明" class="headerlink" title="博客说明"></a>博客说明</h1><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结， 方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。<br>上一篇博客简要介绍了oozie，这篇博客开始介绍从0开始搭建hadoop集群。</p>
+<h1 id="Oozie环境依赖"><a href="#Oozie环境依赖" class="headerlink" title="Oozie环境依赖"></a>Oozie环境依赖</h1><ul>
+<li>Unix box (tested on Mac OS X and Linux)</li>
+<li>Java JDK 1.6+</li>
+<li>Maven 3.0.1+</li>
+<li>Hadoop 0.20.2+</li>
+<li>Pig 0.7+</li>
+<li>ExtJS library (optional, to enable Oozie webconsole)</li>
+</ul>
+<p>由于oozie对于依赖软件的版本要求很严格，最新版hadoop2.7.2尚未找到有人成功适配Oozie4.2.0，所以我选择的是hadoop2.6.0。java最新版是1.8，但是在尝试用1.8配置环境过程中，会因为版本问题出现bug，所以退回1.7，完美运行。ExtJS Library只允许用2.2版本，其他版本都不行。所以本次实验的环境如下：</p>
+<ul>
+<li>Ubuntu 14.04 LTS</li>
+<li>Java JDK 1.7</li>
+<li>Hadoop 2.6.0</li>
+<li>ExtJS library 2.2</li>
+<li>Maven 3.3.9</li>
+</ul>
+<h1 id="节点搭建"><a href="#节点搭建" class="headerlink" title="节点搭建"></a>节点搭建</h1><p>本次实验，使用了3个节点，一个namenode节点和两个datanode节点，分别记为datanode0和datanode1，hostname和ip分别为如下，并且设置三个节点的用户均为ubuntu：</p>
+<table>
+<thead>
+<tr>
+<th>节点名</th>
+<th>内网ip地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>namenode</td>
+<td>166.111.81.154</td>
+<td></td>
+</tr>
+<tr>
+<td>datanode0</td>
+<td>166.111.81.162</td>
+<td></td>
+</tr>
+<tr>
+<td>datanode1</td>
+<td>166.111.81.164</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h2><p>在配置的过程中，为了更加方便，不用去记ip，在~/.ssh/中新建一个配置文件config，配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Host namenode</span><br><span class="line">  HostName 166.111.81.154</span><br><span class="line">  User ubuntu</span><br><span class="line"></span><br><span class="line">Host datanode0</span><br><span class="line">  HostName 166.111.81.162</span><br><span class="line">  User ubuntu</span><br><span class="line"></span><br><span class="line">Host datanode1</span><br><span class="line">  HostName 166.111.81.164</span><br><span class="line">  User ubuntu</span><br></pre></td></tr></table></figure></p>
+<h3 id="配置PasswordLess-SSH"><a href="#配置PasswordLess-SSH" class="headerlink" title="配置PasswordLess SSH"></a>配置PasswordLess SSH</h3><p>hadoop集群节点间通讯通过ssh，namenode需要无密码连接到datanode，配置的步骤如下：<br>第一步：在namenode节点上生成Authentication SSH-Kegen Keys<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh-keygen -t rsa</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/ubuntu/.ssh/id_rsa): [Press enter key]</span><br><span class="line">Created directory <span class="string">'/home/ubuntu/.ssh'</span>.</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): [Press enter key]</span><br><span class="line">Enter same passphrase again: [Press enter key]</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/ubuntu/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/ubuntu/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">5f:ad:40:00:8a:d1:9b:99:b3:b0:f8:08:99:c3:ed:d3 ubuntu@namenode</span><br><span class="line">The key<span class="string">'s randomart image is:</span><br><span class="line">+--[ RSA 2048]----+</span><br><span class="line">|        ..oooE.++|</span><br><span class="line">|         o. o.o  |</span><br><span class="line">|          ..   . |</span><br><span class="line">|         o  . . o|</span><br><span class="line">|        S .  . + |</span><br><span class="line">|       . .    . o|</span><br><span class="line">|      . o o    ..|</span><br><span class="line">|       + +       |</span><br><span class="line">|        +.       |</span><br><span class="line">+-----------------+</span><br><span class="line"></span><br><span class="line">ubuntu@namenode:~$ cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span></span><br></pre></td></tr></table></figure></p>
+<p>第二步：在datanode节点上创建~/.ssh路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh ubuntu@datanode0 mkdir -p .ssh</span><br><span class="line">The authenticity of host <span class="string">'166.111.81.162 (166.111.81.162)'</span> can<span class="string">'t be established.</span><br><span class="line">RSA key fingerprint is 45:0e:28:11:d6:81:62:16:04:3f:db:38:02:la:22:4e.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added '</span>166.111.81.162<span class="string">' (ECDSA) to the list of known hosts.</span><br><span class="line">ubuntu@166.111.81.162'</span>s password: &lt;mark&gt;[Enter Your Password Here]&lt;/mark&gt;</span><br></pre></td></tr></table></figure></p>
+<p>datanode1同理</p>
+<p>第三步：上传public keys到datanode<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ cat .ssh/id_rsa.pub | ssh ubuntu@datanode0 <span class="string">'cat &gt;&gt; .ssh/authorized_keys'</span></span><br><span class="line"></span><br><span class="line">ubuntu@166.111.81.162<span class="string">'s password:&lt;mark&gt;[Enter Your Password Here]&lt;/mark&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>datanode1同理</p>
+<p>第四步：设置访问.ssh权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh ubuntu@datanode0 <span class="string">"chmod 700 .ssh; chmod 640 .ssh/authorized_keys"</span></span><br><span class="line"> </span><br><span class="line">ubuntu@166.111.81.162<span class="string">'s password:&lt;mark&gt;[Enter Your Password Here]&lt;/mark&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>datanode1同理<br>通过以上四步，就可以在namenode接单上直接<code>ssh datanode0</code>连接datanode节点了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@namenode:~$ ssh datanode0</span><br></pre></td></tr></table></figure></p>
+<p>## </p>
+<h1 id="Java安装"><a href="#Java安装" class="headerlink" title="Java安装"></a>Java安装</h1><h1 id="Maven安装"><a href="#Maven安装" class="headerlink" title="Maven安装"></a>Maven安装</h1><h1 id="hadoop-安装"><a href="#hadoop-安装" class="headerlink" title="hadoop 安装"></a>hadoop 安装</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/" target="_blank" rel="external">SSH Passwordless Login Using SSH Keygen in 5 Easy Steps</a><br><a href="http://insightdataengineering.com/blog/hadoopdevops/#ssh" target="_blank" rel="external">Spinning Up a Free Hadoop Cluster: Step by Step</a></p>
 
             
           </span>
