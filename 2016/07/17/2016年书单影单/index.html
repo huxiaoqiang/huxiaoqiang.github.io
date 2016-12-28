@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Oozie," />
+  <meta name="keywords" content="个人," />
 
 
 
@@ -53,16 +53,16 @@
 
 
 
-<meta name="description" content="&amp;#x535A;&amp;#x5BA2;&amp;#x7B80;&amp;#x4ECB;&amp;#x8FD1;&amp;#x671F;&amp;#x5BFC;&amp;#x5E08;&amp;#x8981;&amp;#x6211;&amp;#x7814;&amp;#x7A76;&amp;#x4E00;&amp;#x4E0B;&amp;#x5927;&amp;#x6570;&amp;#x636E;&amp;#x7CFB;&amp;#x7EDF;&amp;#x5F15;&amp;#x64CE;oozie&amp;#x4E2D;&amp;#x5DE5;&amp;#x4F5C;&amp;#x">
+<meta name="description" content="2016&amp;#x5E74;&amp;#x4E66;&amp;#x5355;&amp;#x5F71;&amp;#x5355;&amp;#x8BB0;&amp;#x5F55;&amp;#x5373;&amp;#x5C06;&amp;#x8FC7;&amp;#x53BB;&amp;#x7684;2016&amp;#x5E74;&amp;#xFF0C;&amp;#x6211;&amp;#x9605;&amp;#x8BFB;&amp;#x8FC7;&amp;#x7684;&amp;#x4E66;&amp;#xFF0C;&amp;#x4EE5;&amp;#x53CA;&amp;#x770B;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oozie系统研究（一）——Oozie简介">
-<meta property="og:url" content="http://huxiaoqiang.github.com/2016/07/13/oozie简介/index.html">
+<meta property="og:title" content="Oozie系统研究（二）——搭建hadoop集群">
+<meta property="og:url" content="http://huxiaoqiang.github.com/2016/07/17/2016年书单影单/index.html">
 <meta property="og:site_name" content="小强的博客">
-<meta property="og:description" content="&amp;#x535A;&amp;#x5BA2;&amp;#x7B80;&amp;#x4ECB;&amp;#x8FD1;&amp;#x671F;&amp;#x5BFC;&amp;#x5E08;&amp;#x8981;&amp;#x6211;&amp;#x7814;&amp;#x7A76;&amp;#x4E00;&amp;#x4E0B;&amp;#x5927;&amp;#x6570;&amp;#x636E;&amp;#x7CFB;&amp;#x7EDF;&amp;#x5F15;&amp;#x64CE;oozie&amp;#x4E2D;&amp;#x5DE5;&amp;#x4F5C;&amp;#x">
-<meta property="og:updated_time" content="2016-07-13T14:10:50.000Z">
+<meta property="og:description" content="2016&amp;#x5E74;&amp;#x4E66;&amp;#x5355;&amp;#x5F71;&amp;#x5355;&amp;#x8BB0;&amp;#x5F55;&amp;#x5373;&amp;#x5C06;&amp;#x8FC7;&amp;#x53BB;&amp;#x7684;2016&amp;#x5E74;&amp;#xFF0C;&amp;#x6211;&amp;#x9605;&amp;#x8BFB;&amp;#x8FC7;&amp;#x7684;&amp;#x4E66;&amp;#xFF0C;&amp;#x4EE5;&amp;#x53CA;&amp;#x770B;">
+<meta property="og:updated_time" content="2016-12-28T12:32:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oozie系统研究（一）——Oozie简介">
-<meta name="twitter:description" content="&amp;#x535A;&amp;#x5BA2;&amp;#x7B80;&amp;#x4ECB;&amp;#x8FD1;&amp;#x671F;&amp;#x5BFC;&amp;#x5E08;&amp;#x8981;&amp;#x6211;&amp;#x7814;&amp;#x7A76;&amp;#x4E00;&amp;#x4E0B;&amp;#x5927;&amp;#x6570;&amp;#x636E;&amp;#x7CFB;&amp;#x7EDF;&amp;#x5F15;&amp;#x64CE;oozie&amp;#x4E2D;&amp;#x5DE5;&amp;#x4F5C;&amp;#x">
+<meta name="twitter:title" content="Oozie系统研究（二）——搭建hadoop集群">
+<meta name="twitter:description" content="2016&amp;#x5E74;&amp;#x4E66;&amp;#x5355;&amp;#x5F71;&amp;#x5355;&amp;#x8BB0;&amp;#x5F55;&amp;#x5373;&amp;#x5C06;&amp;#x8FC7;&amp;#x53BB;&amp;#x7684;2016&amp;#x5E74;&amp;#xFF0C;&amp;#x6211;&amp;#x9605;&amp;#x8BFB;&amp;#x8FC7;&amp;#x7684;&amp;#x4E66;&amp;#xFF0C;&amp;#x4EE5;&amp;#x53CA;&amp;#x770B;">
 
 
 
@@ -74,7 +74,7 @@
   };
 </script>
 
-  <title> Oozie系统研究（一）——Oozie简介 | 小强的博客 </title>
+  <title> Oozie系统研究（二）——搭建hadoop集群 | 小强的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -211,7 +211,7 @@
             
             
               
-                Oozie系统研究（一）——Oozie简介
+                Oozie系统研究（二）——搭建hadoop集群
               
             
           </h1>
@@ -220,8 +220,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-07-13T19:22:14+08:00" content="2016-07-13">
-              2016-07-13
+            <time itemprop="dateCreated" datetime="2016-07-17T10:30:14+08:00" content="2016-07-17">
+              2016-07-17
             </time>
           </span>
 
@@ -244,42 +244,95 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="&#x535A;&#x5BA2;&#x7B80;&#x4ECB;"><a href="#&#x535A;&#x5BA2;&#x7B80;&#x4ECB;" class="headerlink" title="&#x535A;&#x5BA2;&#x7B80;&#x4ECB;"></a>&#x535A;&#x5BA2;&#x7B80;&#x4ECB;</h2><p>&#x8FD1;&#x671F;&#x5BFC;&#x5E08;&#x8981;&#x6211;&#x7814;&#x7A76;&#x4E00;&#x4E0B;&#x5927;&#x6570;&#x636E;&#x7CFB;&#x7EDF;&#x5F15;&#x64CE;oozie&#x4E2D;&#x5DE5;&#x4F5C;&#x6D41;&#x6A21;&#x5F0F;&#xFF0C;&#x4E5F;&#x662F;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x63A5;&#x89E6;&#x5230;&#x5927;&#x6570;&#x636E;&#x76F8;&#x5173;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5728;&#x5B66;&#x4E60;&#x8FC7;&#x7A0B;&#x548C;&#x5B9E;&#x9A8C;&#x73AF;&#x5883;&#x7684;&#x642D;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5B66;&#x4E60;&#x5230;&#x4E86;&#x8BB8;&#x591A;&#x77E5;&#x8BC6;&#xFF0C;&#x4E5F;&#x9047;&#x5230;&#x4E86;&#x8BF8;&#x591A;&#x5751;&#x3002;&#x60F3;&#x628A;&#x8FD9;&#x4E9B;&#x7ECF;&#x9A8C;&#x548C;&#x6559;&#x8BAD;&#x505A;&#x4E2A;&#x8BB0;&#x5F55;&#x548C;&#x603B;&#x7ED3;&#xFF0C;&#x65B9;&#x4FBF;&#x540E;&#x7EED;&#x81EA;&#x5DF1;&#x590D;&#x4E60;&#x548C;&#x540E;&#x6765;&#x4EBA;&#x53C2;&#x8003;&#xFF0C;&#x5982;&#x6709;&#x9519;&#x8BEF;&#x4E4B;&#x5904;&#xFF0C;&#x6B22;&#x8FCE;&#x6279;&#x8BC4;&#x6307;&#x6B63;<br>&#x8FD9;&#x7BC7;&#x535A;&#x5BA2;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;Oozie&#xFF0C;&#x4F5C;&#x4E3A;&#x4E86;&#x89E3;&#x548C;&#x5165;&#x95E8;&#x7EA7;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
-<h2 id="&#x4EC0;&#x4E48;&#x662F;Oozie&#xFF1F;"><a href="#&#x4EC0;&#x4E48;&#x662F;Oozie&#xFF1F;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F;Oozie&#xFF1F;"></a>&#x4EC0;&#x4E48;&#x662F;Oozie&#xFF1F;</h2><p>&#x5982;&#x4E0B;&#x662F;oozie&#x5B98;&#x65B9;&#x9996;&#x9875;<a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a>&#x7684;&#x6982;&#x8FF0;&#x8BF4;&#x660E;&#xFF1A;<br>Oozie is a workflow scheduler system to manage Apache Hadoop jobs.<br>Oozie Workflow jobs are Directed Acyclical Graphs (DAGs) of actions.<br>Oozie Coordinator jobs are recurrent Oozie Workflow jobs triggered by time (frequency) and data availabilty.<br>Oozie is integrated with the rest of the Hadoop stack supporting several types of Hadoop jobs out of the box (such as Java map-reduce, Streaming map-reduce, Pig, Hive, Sqoop and Distcp) as well as system specific jobs (such as Java programs and shell scripts).<br>Oozie is a scalable, reliable and extensible system.</p>
-<p>&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x6982;&#x8FF0;Oozie&#x662F;&#x4EC0;&#x4E48;&#xFF1A;</p>
-<ul>
-<li>Oozie&#x662F;&#x7BA1;&#x7406;hadoop&#x4F5C;&#x4E1A;&#x7684;&#x8C03;&#x5EA6;&#x7CFB;&#x7EDF;</li>
-<li>Oozie&#x7684;&#x5DE5;&#x4F5C;&#x6D41;&#x4F5C;&#x4E1A;&#x662F;&#x4E00;&#x7CFB;&#x5217;&#x52A8;&#x4F5C;&#x7684;&#x6709;&#x5411;&#x65E0;&#x73AF;&#x56FE;&#xFF08;DAG&#xFF09;</li>
-<li>Oozie&#x534F;&#x8C03;&#x4F5C;&#x4E1A;&#x662F;&#x901A;&#x8FC7;&#x65F6;&#x95F4;&#xFF08;&#x9891;&#x7387;&#xFF09;&#x548C;&#x6709;&#x6548;&#x6570;&#x636E;&#x89E6;&#x53D1;&#x5F53;&#x524D;&#x7684;Oozie&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</li>
-<li>Oozie&#x652F;&#x6301;&#x5404;&#x79CD;hadoop&#x4F5C;&#x4E1A;&#xFF0C;&#x4F8B;&#x5982;:java map-reduce&#x3001;Streaming map-reduce&#x3001;pig&#x3001;hive&#x3001;sqoop&#x548C;distcp&#x7B49;&#x7B49;&#xFF0C;&#x4E5F;&#x652F;&#x6301;&#x7CFB;&#x7EDF;&#x7279;&#x5B9A;&#x7684;&#x4F5C;&#x4E1A;&#xFF0C;&#x4F8B;&#x5982;java&#x7A0B;&#x5E8F;&#x548C;shell&#x811A;&#x672C;&#x3002;</li>
-<li>Oozie&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4F38;&#x7F29;&#xFF0C;&#x53EF;&#x9760;&#x548C;&#x53EF;&#x62D3;&#x5C55;&#x7684;&#x7CFB;&#x7EDF;<br>&#x4E0B;&#x9762;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;Oozie&#x7684;&#x539F;&#x7406;&#x548C;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;</li>
-</ul>
-<h2 id="Oozie&#x539F;&#x7406;&#x53CA;&#x7279;&#x70B9;"><a href="#Oozie&#x539F;&#x7406;&#x53CA;&#x7279;&#x70B9;" class="headerlink" title="Oozie&#x539F;&#x7406;&#x53CA;&#x7279;&#x70B9;"></a>Oozie&#x539F;&#x7406;&#x53CA;&#x7279;&#x70B9;</h2><p>Oozie&#x662F;&#x4E00;&#x79CD;Java Web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x8FD0;&#x884C;&#x5728;Java servlet&#x5BB9;&#x5668;&#x2014;&#x2014;&#x5373;Tomcat&#x2014;&#x2014;&#x4E2D;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;&#x6765;&#x5B58;&#x50A8;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
-<ul>
-<li>&#x5DE5;&#x4F5C;&#x6D41;&#x5B9A;&#x4E49;</li>
-<li>&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x7684;&#x5DE5;&#x4F5C;&#x6D41;&#x5B9E;&#x4F8B;&#xFF0C;&#x5305;&#x62EC;&#x5B9E;&#x4F8B;&#x7684;&#x72B6;&#x6001;&#x548C;&#x53D8;&#x91CF;</li>
-</ul>
-<p>Oozie&#x7684;&#x9ED8;&#x8BA4;&#x6570;&#x636E;&#x5E93;&#x662F;derby&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x6210;mysql&#x3002;<br>Oozie&#x7684;&#x7528;DAG&#xFF08;&#x6709;&#x5411;&#x65E0;&#x73AF;&#x56FE; Direct Acyclic Graph&#xFF09;&#x6765;&#x5B9A;&#x4E49;&#x5DE5;&#x4F5C;&#x6D41;&#xFF0C;DAG&#x6307;&#x5B9A;&#x4E86;&#x5DE5;&#x4F5C;&#x6D41;&#x6267;&#x884C;&#x7684;&#x987A;&#x5E8F;&#x3002;Oozie&#x4F7F;&#x7528;hPDL&#xFF08;&#x4E00;&#x79CD;xml&#x6D41;&#x7A0B;&#x5B9A;&#x4E49;&#x8BED;&#x8A00;&#xFF09;&#x6765;&#x63CF;&#x8FF0;&#x5DE5;&#x4F5C;&#x6D41;&#x3002;</p>
-<h2 id="Oozie&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;"><a href="#Oozie&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;" class="headerlink" title="Oozie&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;"></a>Oozie&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;</h2><p>hPDL&#x662F;&#x4E00;&#x79CD;&#x5F88;&#x7B80;&#x6D01;&#x7684;&#x8BED;&#x8A00;(xml)&#xFF0C;hPDL&#x662F;&#x4E00;&#x79CD;&#x5F88;&#x7B80;&#x6D01;&#x7684;&#x8BED;&#x8A00;&#xFF0C;&#x53EA;&#x4F1A;&#x4F7F;&#x7528;&#x5C11;&#x6570;&#x6D41;&#x7A0B;&#x63A7;&#x5236;&#x548C;&#x52A8;&#x4F5C;&#x8282;&#x70B9;&#x3002;&#x63A7;&#x5236;&#x8282;&#x70B9;&#x4F1A;&#x5B9A;&#x4E49;&#x6267;&#x884C;&#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x5E76;&#x5305;&#x542B;&#x5DE5;&#x4F5C;&#x6D41;&#x7684;&#x8D77;&#x70B9;&#x548C;&#x7EC8;&#x70B9;&#xFF08;start&#x3001;end&#x548C;fail&#x8282;&#x70B9;&#xFF09;&#x4EE5;&#x53CA;&#x63A7;&#x5236;&#x5DE5;&#x4F5C;&#x6D41;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x7684;&#x673A;&#x5236;&#xFF08;decision&#x3001;fork&#x548C;join&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x52A8;&#x4F5C;&#x8282;&#x70B9;&#x662F;&#x4E00;&#x4E9B;&#x673A;&#x5236;&#xFF0C;&#x901A;&#x8FC7;&#x5B83;&#x4EEC;&#x5DE5;&#x4F5C;&#x6D41;&#x4F1A;&#x89E6;&#x53D1;&#x6267;&#x884C;&#x8BA1;&#x7B97;&#x6216;&#x8005;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x3002;</p>
-<h3 id="&#x63A7;&#x5236;&#x6D41;&#x8282;&#x70B9;"><a href="#&#x63A7;&#x5236;&#x6D41;&#x8282;&#x70B9;" class="headerlink" title="&#x63A7;&#x5236;&#x6D41;&#x8282;&#x70B9;"></a>&#x63A7;&#x5236;&#x6D41;&#x8282;&#x70B9;</h3><ul>
-<li>start</li>
-<li>end</li>
-<li>fail</li>
-<li>decision</li>
-<li>fork-join<h3 id="&#x4EFB;&#x52A1;&#x8282;&#x70B9;"><a href="#&#x4EFB;&#x52A1;&#x8282;&#x70B9;" class="headerlink" title="&#x4EFB;&#x52A1;&#x8282;&#x70B9;"></a>&#x4EFB;&#x52A1;&#x8282;&#x70B9;</h3></li>
-<li>HDFS<ul>
-<li>move, delete, mkdir, chmod, touchz, distcp</li>
-</ul>
-</li>
-<li>Map-Reduce</li>
-<li>Pig</li>
-<li>Hive</li>
-<li>SSH</li>
-<li>Java</li>
-<li>shell</li>
-<li>spark</li>
-</ul>
-<h2 id="&#x53C2;&#x8003;&#x5185;&#x5BB9;"><a href="#&#x53C2;&#x8003;&#x5185;&#x5BB9;" class="headerlink" title="&#x53C2;&#x8003;&#x5185;&#x5BB9;"></a>&#x53C2;&#x8003;&#x5185;&#x5BB9;</h2><p><a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a><br><a href="http://www.infoq.com/cn/articles/introductionOozie?utm_source=infoq_en&amp;utm_medium=link_on_en_item&amp;utm_campaign=item_in_other_langs" target="_blank" rel="external">Oozie&#x7B80;&#x4ECB;</a></p>
+        <span itemprop="articleBody"><h2 id="2016&#x5E74;&#x4E66;&#x5355;&#x5F71;&#x5355;"><a href="#2016&#x5E74;&#x4E66;&#x5355;&#x5F71;&#x5355;" class="headerlink" title="2016&#x5E74;&#x4E66;&#x5355;&#x5F71;&#x5355;"></a>2016&#x5E74;&#x4E66;&#x5355;&#x5F71;&#x5355;</h2><p>&#x8BB0;&#x5F55;&#x5373;&#x5C06;&#x8FC7;&#x53BB;&#x7684;2016&#x5E74;&#xFF0C;&#x6211;&#x9605;&#x8BFB;&#x8FC7;&#x7684;&#x4E66;&#xFF0C;&#x4EE5;&#x53CA;&#x770B;&#x8FC7;&#x7684;&#x7535;&#x5F71;&#xFF0C;&#x540E;&#x7EED;&#x6162;&#x6162;&#x4FEE;&#x6539;&#x66F4;&#x65B0;</p>
+<h3 id="&#x4E66;&#x5355;"><a href="#&#x4E66;&#x5355;" class="headerlink" title="&#x4E66;&#x5355;"></a>&#x4E66;&#x5355;</h3><p>&#x672C;&#x6765;2015&#x5E74;&#x7EC8;&#x5199;&#x603B;&#x7ED3;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x76EE;&#x6807;&#x662F;2016&#x5E74;&#x8981;&#x8BFB;&#x4E66;30&#x672C;&#x7684;&#xFF08;&#x5176;&#x5B9E;&#x4E5F;&#x4E0D;&#x591A;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6570;&#x91CF;&#x4E0A;&#x4E5F;&#x5C31;&#x5DEE;&#x4E0D;&#x591A;&#x4E00;&#x534A;&#x5427;&#xFF0C;&#x800C;&#x4E14;&#x4E5F;&#x6CA1;&#x6709;&#x5E7F;&#x6CDB;&#x6D89;&#x730E;&#xFF0C;&#x770B;&#x5C0F;&#x8BF4;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x300A;&#x660E;&#x671D;&#x90A3;&#x4E9B;&#x4E8B;&#x300B;&#x4E5F;&#x662F;&#x5F53;&#x5C0F;&#x8BF4;&#x7684;&#x5F62;&#x5F0F;&#x6765;&#x770B;&#x7684;&#xFF0C;&#x5F3A;&#x884C;&#x60F3;&#x57F9;&#x517B;&#x81EA;&#x5DF1;&#x7684;&#x8BFB;&#x4E66;&#x4E60;&#x60EF;&#xFF0C;&#x770B;&#x6765;&#x662F;&#x8FD8;&#x5DEE;&#x5F88;&#x8FDC;&#xFF0C;&#x4F46;&#x662F;&#x591A;&#x5C11;&#x4E5F;&#x8FD8;&#x662F;&#x770B;&#x4E86;&#x4E9B;&#x4E66;&#xFF0C;&#x4E5F;&#x7F57;&#x5217;&#x51FA;&#x6765;&#x4F5C;&#x4E3A;&#x8BB0;&#x5F55;&#x3002;2017&#x5E74;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x4F9D;&#x7136;&#x662F;&#x9605;&#x8BFB;30&#x672C;&#x4E66;&#x5427;&#xFF0C;&#x5E76;&#x4E14;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x591A;&#x65B9;&#x6D89;&#x730E;&#xFF0C;&#x5C0F;&#x8BF4;&#x3001;&#x5FC3;&#x7406;&#x5B66;&#x3001;&#x7ECF;&#x6D4E;&#x5B66;&#x3001;&#x5386;&#x53F2;&#x3001;&#x4E13;&#x4E1A;&#x76F8;&#x5173;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x6211;2016&#x5E74;&#x770B;&#x8FC7;&#x7684;&#x4E00;&#x4E9B;&#x4E66;&#x7C4D;&#xFF0C;&#x4E5F;&#x6CA1;&#x5565;&#x53EF;&#x4EE5;&#x63A8;&#x8350;&#x7684;&#x3002;</p>
+<h4 id="&#x5386;&#x53F2;"><a href="#&#x5386;&#x53F2;" class="headerlink" title="&#x5386;&#x53F2;"></a>&#x5386;&#x53F2;</h4><blockquote>
+<p>&#x300A;&#x660E;&#x671D;&#x90A3;&#x4E9B;&#x4E8B;&#x300B;&#xFF08;1-6&#xFF09;</p>
+<p>&#x300A;&#x53F0;&#x6E7E;&#x4E0D;&#x80FD;&#x8BF4;&#x7684;&#x79D8;&#x5BC6;&#x300B;</p>
+<h4 id="&#x5C0F;&#x8BF4;"><a href="#&#x5C0F;&#x8BF4;" class="headerlink" title="&#x5C0F;&#x8BF4;"></a>&#x5C0F;&#x8BF4;</h4><p>&#x300A;&#x767D;&#x591C;&#x884C;&#x300B;</p>
+<p>&#x300A;&#x89E3;&#x5FE7;&#x6742;&#x8D27;&#x5E97;&#x300B;</p>
+<p>&#x300A;&#x8BB8;&#x4E09;&#x89C2;&#x5356;&#x8840;&#x8BB0;&#x300B;</p>
+<p>&#x300A;&#x6D3B;&#x7740;&#x300B;</p>
+<p>&#x300A;&#x6211;&#x4E0D;&#x662F;&#x6F58;&#x91D1;&#x83B2;&#x300B; </p>
+</blockquote>
+<h4 id="&#x6545;&#x4E8B;&#x96C6;"><a href="#&#x6545;&#x4E8B;&#x96C6;" class="headerlink" title="&#x6545;&#x4E8B;&#x96C6;"></a>&#x6545;&#x4E8B;&#x96C6;</h4><blockquote>
+<p>&#x300A;&#x4E0D;&#x6B63;&#x5E38;&#x4EBA;&#x75C7;&#x5019;&#x7FA4;&#x300B;</p>
+</blockquote>
+<h4 id="&#x4E13;&#x4E1A;&#x76F8;&#x5173;"><a href="#&#x4E13;&#x4E1A;&#x76F8;&#x5173;" class="headerlink" title="&#x4E13;&#x4E1A;&#x76F8;&#x5173;"></a>&#x4E13;&#x4E1A;&#x76F8;&#x5173;</h4><blockquote>
+<p>&#x300A;spring&#x6559;&#x7A0B;&#x300B;</p>
+<p>&#x300A;&#x4ECE;&#x7269;&#x8054;&#x7F51;&#x5230;&#x5DE5;&#x4E1A;4.0&#x300B;</p>
+<p>&#x300A;&#x6D6A;&#x6F6E;&#x4E4B;&#x5DC5;&#x300B;</p>
+</blockquote>
+<h3 id="&#x5F71;&#x5355;"><a href="#&#x5F71;&#x5355;" class="headerlink" title="&#x5F71;&#x5355;"></a>&#x5F71;&#x5355;</h3><h4 id="&#x7535;&#x5F71;"><a href="#&#x7535;&#x5F71;" class="headerlink" title="&#x7535;&#x5F71;"></a>&#x7535;&#x5F71;</h4><p>&#x4E66;&#x6CA1;&#x770B;&#x591A;&#x5C11;&#x672C;&#xFF0C;&#x7535;&#x5F71;&#x5012;&#x662F;&#x770B;&#x4E86;&#x4E0D;&#x5C11;= =&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x503C;&#x5F97;&#x63A8;&#x8350;&#x7684;&#x7535;&#x5F71;&#xFF0C;&#x4E0B;&#x9762;&#x6574;&#x7406;&#x4E00;&#x4E0B;&#x6211;&#x8FD9;&#x4E00;&#x5E74;&#x6765;&#x770B;&#x8FC7;&#x7684;&#x7535;&#x5F71;&#x3002;</p>
+<blockquote>
+<p>&#x52A8;&#x753B;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x75AF;&#x72C2;&#x52A8;&#x7269;&#x57CE;&#x300B;</p>
+<blockquote>
+<p>&#x6050;&#x6016;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x4E24;&#x4E2A;&#x6708;&#x4EAE;&#x300B;</p>
+<p>&#x300A;&#x54ED;&#x58F0;&#x300B;</p>
+<p>&#x300A;&#x7EA2;&#x8863;&#x5C0F;&#x5973;&#x5B69;&#x300B;</p>
+<p>&#x300A;&#x5389;&#x9B3C;&#x5C06;&#x6620;&#x300B;</p>
+<blockquote>
+<p>&#x60CA;&#x609A;&#x72AF;&#x7F6A;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x6811;&#x5927;&#x62DB;&#x98CE;&#x300B;</p>
+<p>&#x300A;&#x8001;&#x7B20;&#x300B;</p>
+<blockquote>
+<p>&#x7231;&#x60C5;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x5047;&#x5982;&#x7231;&#x6709;&#x5929;&#x610F;&#x300B;</p>
+<p>&#x300A;&#x521D;&#x604B;50&#x6B21;&#x300B;</p>
+<blockquote>
+<p>&#x60AC;&#x7591;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x767D;&#x591C;&#x884C;&#x300B;&#xFF08;&#x97E9;&#x56FD;&#x7248;&#xFF09;</p>
+<p>&#x300A;&#x5ACC;&#x7591;&#x4EBA;X&#x7684;&#x732E;&#x8EAB;&#x300B;</p>
+<p>&#x300A;&#x5510;&#x4EBA;&#x8857;&#x63A2;&#x6848;&#x300B;</p>
+<blockquote>
+<p>&#x8C0D;&#x6218;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x8C0D;&#x5F71;&#x91CD;&#x91CD;5&#x300B;</p>
+<p>&#x300A;&#x5ACC;&#x7591;&#x4EBA;&#x300B;</p>
+<p>&#x300A;&#x5BD2;&#x6218;2&#x300B;</p>
+<blockquote>
+<p>&#x65E0;&#x8111;&#x7206;&#x7C73;&#x82B1;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x8681;&#x4EBA;&#x300B; </p>
+<p>&#x300A;&#x661F;&#x7403;&#x5927;&#x6218;&#xFF1A;&#x539F;&#x529B;&#x89C9;&#x9192;&#x300B;</p>
+<p>&#x300A;&#x7F8E;&#x56FD;&#x961F;&#x957F;3&#x300B;</p>
+<p>&#x300A;&#x9B54;&#x517D;&#x300B;</p>
+<p>&#x300A;X&#x6218;&#x8B66;&#xFF1A;&#x5929;&#x542F;&#x300B;</p>
+<p>&#x300A;&#x795E;&#x5947;&#x52A8;&#x7269;&#x5728;&#x54EA;&#x91CC;&#x300B;</p>
+<p>&#x300A;&#x4F69;&#x5C0F;&#x59D0;&#x7684;&#x5947;&#x5E7B;&#x57CE;&#x5821;&#x300B;</p>
+<p>&#x300A;&#x60CA;&#x5929;&#x9B54;&#x76D7;&#x56E2;2&#x300B;</p>
+<p>&#x300A;&#x7F8E;&#x4EBA;&#x9C7C;&#x300B;</p>
+<blockquote>
+<p>&#x6E29;&#x60C5;&#x7247;&amp;&#x52B1;&#x5FD7;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x9633;&#x5149;&#x59D0;&#x59B9;&#x6DD8;&#x300B;</p>
+<p>&#x300A;&#x57AB;&#x5E95;&#x8FA3;&#x59B9;&#x300B;</p>
+<p>&#x300A;&#x7206;&#x88C2;&#x9F13;&#x624B;&#x300B;</p>
+<blockquote>
+<p>&#x8BBD;&#x5BD3;&#x6545;&#x4E8B;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x9A74;&#x5F97;&#x6C34;&#x300B;</p>
+<p>&#x300A;&#x6BD4;&#x5229;&#x6797;&#x6069;&#x7684;&#x4E2D;&#x573A;&#x6545;&#x4E8B;&#x300B;</p>
+<p>&#x300A;&#x7194;&#x7089;&#x300B;</p>
+<p>&#x300A;&#x672C;&#x6770;&#x660E;&#xB7;&#x5DF4;&#x987F;&#x5947;&#x4E8B;&#x300B;</p>
+<blockquote>
+<p>&#x4E27;&#x5C38;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x91DC;&#x5C71;&#x884C;&#x300B;</p>
+<blockquote>
+<p>&#x6218;&#x4E89;&#x7247;</p>
+</blockquote>
+<p>&#x300A;&#x8840;&#x6218;&#x94A2;&#x952F;&#x5CAD;&#x300B;</p>
+<p>&#x300A;&#x6E44;&#x516C;&#x6CB3;&#x884C;&#x52A8;&#x300B;</p>
+<h4 id="&#x7F8E;&#x5267;"><a href="#&#x7F8E;&#x5267;" class="headerlink" title="&#x7F8E;&#x5267;"></a>&#x7F8E;&#x5267;</h4><p>&#x300A;&#x7591;&#x72AF;&#x8FFD;&#x8E2A;&#x300B;&#xFF08;1-4&#xFF09;&#x5F3A;&#x70C8;&#x63A8;&#x8350;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x6211;&#x770B;&#x5230;&#x7B2C;4&#x5B63;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x770B;&#x4E0D;&#x52A8;&#x4E86;&#xFF0C;&#x90A3;&#x4E2A;&#x65F6;&#x5019;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x75B2;&#x4E4F;&#x4E86;&#xFF0C;&#x7136;&#x540E;&#x5F00;&#x59CB;&#x611F;&#x89C9;&#x5267;&#x60C5;&#x6709;&#x70B9;&#x62D6;&#x6C93;&#x4E86;&#xFF0C;&#x800C;&#x4E14;&#x6211;&#x559C;&#x6B22;&#x7684;&#x90A3;&#x4E2A;&#x9ED1;&#x4EBA;&#x5973;&#x8B66;&#x5BDF;&#x5C45;&#x7136;&#x5728;&#x7B2C;&#x4E09;&#x5B63;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x9886;&#x4E86;&#x4FBF;&#x5F53;&#x4E86;&#x3002;</p>
 </span>
       
     </div>
@@ -288,7 +341,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Oozie/" rel="tag">#Oozie</a>
+            <a href="/tags/个人/" rel="tag">#个人</a>
           
         </div>
       
@@ -297,16 +350,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/14/大数据工作流模式/" rel="next" title="大数据工作流模式">
-                <i class="fa fa-chevron-left"></i> 大数据工作流模式
+              <a href="/2016/07/17/hadoop集群搭建/" rel="next" title="Oozie系统研究（二）——搭建hadoop集群">
+                <i class="fa fa-chevron-left"></i> Oozie系统研究（二）——搭建hadoop集群
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/17/hadoop集群搭建/" rel="prev" title="Oozie系统研究（二）——搭建hadoop集群">
-                Oozie系统研究（二）——搭建hadoop集群 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/11/leetcode/LongestSubstringWithoutRepeatingCharacters/" rel="prev" title="leetcode/3.Longest Substring Without Repeating Characters">
+                leetcode/3.Longest Substring Without Repeating Characters <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -439,7 +492,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客简介"><span class="nav-number">1.</span> <span class="nav-text">博客简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Oozie？"><span class="nav-number">2.</span> <span class="nav-text">什么是Oozie？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie原理及特点"><span class="nav-number">3.</span> <span class="nav-text">Oozie原理及特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie核心组件"><span class="nav-number">4.</span> <span class="nav-text">Oozie核心组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#控制流节点"><span class="nav-number">4.1.</span> <span class="nav-text">控制流节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务节点"><span class="nav-number">4.2.</span> <span class="nav-text">任务节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考内容"><span class="nav-number">5.</span> <span class="nav-text">参考内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2016年书单影单"><span class="nav-number">1.</span> <span class="nav-text">2016年书单影单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#书单"><span class="nav-number">1.1.</span> <span class="nav-text">书单</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#历史"><span class="nav-number">1.1.1.</span> <span class="nav-text">历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小说"><span class="nav-number">1.1.2.</span> <span class="nav-text">小说</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#故事集"><span class="nav-number">1.1.3.</span> <span class="nav-text">故事集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#专业相关"><span class="nav-number">1.1.4.</span> <span class="nav-text">专业相关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#影单"><span class="nav-number">1.2.</span> <span class="nav-text">影单</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#电影"><span class="nav-number">1.2.1.</span> <span class="nav-text">电影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#美剧"><span class="nav-number">1.2.2.</span> <span class="nav-text">美剧</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
