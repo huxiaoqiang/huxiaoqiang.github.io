@@ -196,15 +196,6 @@
 
     
     
-      
-      
-        
-        
-        
-      
-
-      
-    
 
     
       
@@ -229,7 +220,7 @@
               
                 
                 <a class="post-title-link" href="/2017/06/05/OPENVPN_IN_UBUNTU/" itemprop="url">
-                  未命名
+                  ubuntu上假设openvpn
                 </a>
               
             
@@ -239,7 +230,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2017-06-05T12:33:10+08:00" content="2017-06-05">
+            <time itemprop="dateCreated" datetime="2017-06-05T00:00:00+08:00" content="2017-06-05">
               2017-06-05
             </time>
           </span>
@@ -266,7 +257,1181 @@
         
           <span itemprop="articleBody">
             
-              <h1 id="&#x5728;ubuntu16-04&#x4E0A;&#x5047;&#x8BBE;OPENVPN"><a href="#&#x5728;ubuntu16-04&#x4E0A;&#x5047;&#x8BBE;OPENVPN" class="headerlink" title="&#x5728;ubuntu16.04&#x4E0A;&#x5047;&#x8BBE;OPENVPN"></a>&#x5728;ubuntu16.04&#x4E0A;&#x5047;&#x8BBE;OPENVPN</h1><p>&#x4E3B;&#x8981;&#x53C2;&#x8003;&#x8FD9;&#x7BC7;<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-16-04" target="_blank" rel="external">&#x535A;&#x5BA2;</a></p>
+              <h1 id="在ubuntu16-04上假设OPENVPN"><a href="#在ubuntu16-04上假设OPENVPN" class="headerlink" title="在ubuntu16.04上假设OPENVPN"></a>在ubuntu16.04上假设OPENVPN</h1><p>主要参考这篇<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-16-04" target="_blank" rel="external">博客</a></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/30/Spring Security Oauth问题/" itemprop="url">
+                  ubuntu上假设openvpn
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-05-30T00:00:00+08:00" content="2017-05-30">
+              2017-05-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="Spring-Security-Oauth问题"><a href="#Spring-Security-Oauth问题" class="headerlink" title="Spring Security Oauth问题"></a>Spring Security Oauth问题</h1><p>当我把filter中的init-param删除时，这个bug：java.lang.IllegalStateException: No WebApplicationContext found: no ContextLoaderListener or DispatcherServlet registered解决</p>
+<pre><code>&lt;filter&gt;
+    &lt;filter-name&gt;springSecurityFilterChain&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.springframework.web.filter.DelegatingFilterProxy&lt;/filter-class&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;contextAttribute&lt;/param-name&gt;
+        &lt;param-value&gt;org.springframework.web.servlet.FrameworkServlet.CONTEXT.spring&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/filter&gt;
+</code></pre>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/03/文献阅读总结/" itemprop="url">
+                  需求工程期末报告
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-01-03T22:07:36+08:00" content="2017-01-03">
+              2017-01-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>博客地址：<a href="/2017/01/03/文献阅读总结/">huxiapqiang.github.io</a></p>
+<h1 id="文献阅读报告"><a href="#文献阅读报告" class="headerlink" title="文献阅读报告"></a>文献阅读报告</h1><p>阅读论文：Zhang C J, Chen L, Jagadish H V, et al. Reducing uncertainty of schema matching via crowdsourcing[J]. Proceedings of the Vldb Endowment, 2013, 6(9):757-768.</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>模式匹配是数据管理中的一个基础性问题。随着数据集的不断增长，使用自动化模式匹配工具能大大节省匹配时间，但其给出的结果带有不确定性，且难以消除。人类的意识可以帮助解决这个不确定性，本文尝试用群众外包（crowdsourcing）的方式来减小模式匹配中的不确定性。</p>
+<h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><h3 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h3><p>模式匹配是指将两个模式作为输入，计算模式元素之间语义对应关系的过程。它在数据集成、数据转换、模型管理、电子商务、语义Web等领域都具有非常重要的作用。如Figure 1所示，有两个模式A和B，模式匹配需要将AB两个模式中的相同语义的属性匹配起来，例如Schema A的Professor.Name和Schema B的ProfessorInfo.Prof.name是相匹配的。Schema A的Department.Name和Schema B的ProfessorInfo.Department是相匹配的。</p>
+<p><img src="/2017/01/03/文献阅读总结/schema_matching.png" alt="schema_matching.png"></p>
+<h3 id="群众外包crowdsourcing"><a href="#群众外包crowdsourcing" class="headerlink" title="群众外包crowdsourcing"></a>群众外包crowdsourcing</h3><p>群众外包<sup>[1]</sup>（英语：crowdsourcing），简称众包，是互联网带来的新的生产组织形式。众包是杂志记者Jeff Howe于2006年发明的一个专业术语，用来描述一种新的商业模式，即企业利用互联网来将工作分配出去、发现创意或解决技术问题。通过互联网控制，这些组织可以利用志愿员工大军的创意和能力————这些志愿员工具备完成任务的技能，愿意利用业余时间工作，满足于对其服务收取小额报酬，或者暂时并无报酬，仅仅满足于未来获得更多报酬的前景。尤其对于软件业和服务业，这提供了一种组织劳动力的全新方式。</p>
+<h3 id="不确定模式匹配"><a href="#不确定模式匹配" class="headerlink" title="不确定模式匹配"></a>不确定模式匹配</h3><p>自动化模式匹配工具给出的结果带有不确定性，因此许多模式匹配工具会给出不只一个匹配，而是给出所有可能的匹配集合（如Table 1），每个可能的匹配都有一个概率，代表这个匹配出现的概率大小。<br><img src="/2017/01/03/文献阅读总结/UncertainSchemaMatching.png" alt="UncertainSchemaMatching.png"></p>
+<h2 id="问题陈述"><a href="#问题陈述" class="headerlink" title="问题陈述"></a>问题陈述</h2><p>在这个部分，给出文章相关问题的定义，便于后续算法的理解（这里使用非形式化的表述，只用自然语言描述）</p>
+<h3 id="定义1：一致性-Correspondence"><a href="#定义1：一致性-Correspondence" class="headerlink" title="定义1：一致性(Correspondence)"></a>定义1：一致性(Correspondence)</h3><p>S和T是两个给定的模式，s1和t1分别是模式S和T中的两个属性，匹配对（s1，t1）就是一个一致性。</p>
+<h3 id="定义2：可能的匹配-Possible-Matching"><a href="#定义2：可能的匹配-Possible-Matching" class="headerlink" title="定义2：可能的匹配(Possible Matching)"></a>定义2：可能的匹配(Possible Matching)</h3><p>S和T是两个给定的模式，所有可能的匹配只的是模式S和T之间的所有一致性组成的集合</p>
+<h3 id="定义3：结果集-Result-Set"><a href="#定义3：结果集-Result-Set" class="headerlink" title="定义3：结果集(Result Set)"></a>定义3：结果集(Result Set)</h3><p>S和T是两个给定的模式，结果集指的是自动化工具生成的所有可能的匹配集合。</p>
+<h3 id="定义4：一致性集-Correspondence-Set"><a href="#定义4：一致性集-Correspondence-Set" class="headerlink" title="定义4：一致性集(Correspondence Set)"></a>定义4：一致性集(Correspondence Set)</h3><p>结果集RS是给定的两个模式S和T的结果集，一致性集CS指的是结果集中所有一致性的并集。</p>
+<h3 id="定义5：模式匹配不确定性（Uncertainty-of-Schema-Matching）"><a href="#定义5：模式匹配不确定性（Uncertainty-of-Schema-Matching）" class="headerlink" title="定义5：模式匹配不确定性（Uncertainty of Schema Matching）"></a>定义5：模式匹配不确定性（Uncertainty of Schema Matching）</h3><p>S和T是两个给定的模式S和T，模式匹配的不确定性由S和T的结果集的香农熵表示</p>
+<h3 id="定义6：一致性正确问题（Correspondence-Correctness-Question，CCQ）"><a href="#定义6：一致性正确问题（Correspondence-Correctness-Question，CCQ）" class="headerlink" title="定义6：一致性正确问题（Correspondence Correctness Question，CCQ）"></a>定义6：一致性正确问题（Correspondence Correctness Question，CCQ）</h3><p>一致性问题（CCQ）会问 一个一致性c是否是正确的，也就是说一个CCQ就是给众包中回答问题的人提的问题，回答者只需要回答是（yes）或者否（no）即可。</p>
+<h3 id="定义7：问题陈述"><a href="#定义7：问题陈述" class="headerlink" title="定义7：问题陈述"></a>定义7：问题陈述</h3><p>S和T是两个给定的模式，在自动化模式匹配工具给出结果集RS以及结果集的可能出现的概率的情况下，在规定预算数量的CCQs的条件下，论文的目标是最大化的减小结果集的不确定性。</p>
+<h2 id="相关算法"><a href="#相关算法" class="headerlink" title="相关算法"></a>相关算法</h2><p>论文中，作者设计了两种算法SingleCCQ和MultipleCCQs算法，顾名思义，Single和Multiple指的是发包的数量，SingleCCQ每次只发一个包，即每次只问一个问题，根据答者的结果，用条件概率调整结果集的概率分布。同理，MultipleCCQs每次发送多个包，即每次提出多个问题，让答者回答，根据答者的结果，用条件概率调整结果集的概率分布。下面分别详细分析两个算法。</p>
+<h3 id="Single-CCQ"><a href="#Single-CCQ" class="headerlink" title="Single CCQ"></a>Single CCQ</h3><p>SingleCCQ的目标是如何选择一个好的单个CCQ，需要形式化两个核心问题：</p>
+<ul>
+<li>期望的不确定性减少（Expect Uncertainty Reduction）</li>
+<li>分布调整（DIstribution Adjustment）</li>
+</ul>
+<blockquote>
+<p>算法框架</p>
+</blockquote>
+<p>SingleCCQ的算法框架如Framework 1所示，基本的思路是对于crowd中的CCQ，每次选择使得能够结果集整体的不确定性减小最大的CCQ发包，直到预算的CCQ数量用完。这样的思路类似于决策树分类算法，每次都选择使得整体熵减小最多的那个属性，作为分支属性。</p>
+<p><img src="/2017/01/03/文献阅读总结/singleCCQ.png" alt="SingleCCQ"> </p>
+<h3 id="Multiple-CCQS"><a href="#Multiple-CCQS" class="headerlink" title="Multiple CCQS"></a>Multiple CCQS</h3><p>Multiple CCQs算法每次向crowd发布k个CCQs（这个k值具体需要调整），这k个CCQs是使得结果集熵减小最多的k个CCQs的集合，当得到一个回答时，马上根据回答的结果调整概率分布，并且重新生成一组新的CCQs，这组新的CCQs是当前减少熵最多的k个CCQs。</p>
+<blockquote>
+<p>算法框架</p>
+</blockquote>
+<p>Multiple CCQs的算法框架如Framework2 所示，首先初始化并发布最优的k个CCQs，然后监控他们的状态，当得到一个答者的回答时，做如下三步：</p>
+<ul>
+<li>所有waiting状态的CCQs撤销</li>
+<li>用新的回答调整结果集的概率分布(8&amp;9行)</li>
+<li>重新生成和发布一组新的CCQs，这组CCQs在当前是贡献最大的一组(12&amp;15行)</li>
+</ul>
+<p>当预算的CCQs数量用完并且所有的CCQs都回答完时，算法结束。</p>
+<p><img src="/2017/01/03/文献阅读总结/MultipleCCQs.png" alt="MultipleCCQs"></p>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>论文通过拓展实验来评价提出的算法，实验分为模拟和真实实现，实验主要关注两个问题：</p>
+<ul>
+<li>减小可能匹配的不确定性的有效性</li>
+<li>通过计算准确率和回召率，验证方法的正确性</li>
+</ul>
+<h3 id="实验设置"><a href="#实验设置" class="headerlink" title="实验设置"></a>实验设置</h3><p>实验采用的模式匹配工具是OntoBuilder，实验数据集有4个，每一个数据集包含5个模式，实验数据集的特征如Table3 所示：<br><img src="/2017/01/03/文献阅读总结/t3.png" alt="t3"></p>
+<p>实验基于仿真和在Amazon Mechanical Turk上的真实实现，下面分别分析仿真和真实环境中的结果。</p>
+<h3 id="仿真"><a href="#仿真" class="headerlink" title="仿真"></a>仿真</h3><p>仿真结果如Figure 3和Figure 4：</p>
+<p><img src="/2017/01/03/文献阅读总结/f3.png" alt="f3"><br><img src="/2017/01/03/文献阅读总结/f4.png" alt="f4"></p>
+<p>从实验结果上来看，仿真结果均能有效的，均能以某种速率减小RS的不确定性。</p>
+<h3 id="在Amazon-Mechanical-Turk上测试"><a href="#在Amazon-Mechanical-Turk上测试" class="headerlink" title="在Amazon Mechanical Turk上测试"></a>在Amazon Mechanical Turk上测试</h3><p>在Amazon Mechanical Turk上测试的结果如下：</p>
+<p><img src="/2017/01/03/文献阅读总结/f5.png" alt="f5"><br><img src="/2017/01/03/文献阅读总结/f6.png" alt="f6"></p>
+<p>在真实场景的结果来看，随着CCQs的增多，SingleCCQ和Multiple CCQ均能有效的减小不确定性</p>
+<p><img src="/2017/01/03/文献阅读总结/f7.png" alt="f7"></p>
+<p>从不同k的时间消耗图来看，当k只越大时，时间效率越高，但是RS的不确定性减小的效果要差，综合来看，当需要更好的效果时，可以把K值设置小一点，当需要比较好的时间效率时，可以把K值设置稍微大一点，这是一个权衡的过程。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>作者创造性的将众包的方式应用到模式匹配中来，减小模式匹配的不确定性，并且提出了两种算法SingleCCQ和MultipleCCQs，通过设计一种发包策略，使得在不超过预算的条件下，减小甚至消除了模式匹配的不确定性。</p>
+<p>由于人的感知具有机器无法取代的优势，很多机器无法理解的语义最终还是需要人工去区分，未来众包在研究课题，内容调研中将会应用越来越多，这篇文章的思路可以借鉴。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1]. Crowdsourcing <a href="https://en.wikipedia.org/wiki/Crowdsourcing" target="_blank" rel="external">https://en.wikipedia.org/wiki/Crowdsourcing</a></p>
+<h1 id="需求分析——用户故事"><a href="#需求分析——用户故事" class="headerlink" title="需求分析——用户故事"></a>需求分析——用户故事</h1><p>该部分使用用户故事的方式，描述目标建模作业的“校园球场网上预约系统”的需求。</p>
+<ul>
+<li>作为一个清华学生，我想要能够用清华info账号登录到校园球场网上预约系统，以便于使用系统的功能</li>
+<li>作为一个清华学生，我想要能够在校园球场网上预约系统上查询球场的空闲时间段，以便于实时了解场地的预定情况</li>
+<li>作为一个清华学生，我想要能够在校园球场网上预约系统上预定空闲时间段的球场，使得预定自动化</li>
+<li>作为一个清华学生，我想要能够在尚未付款的情况下，能够取消预订，在操作失误或者自己改变主意时修改</li>
+<li>作为一个清华学生，在校园球场网上预约系统上预定后，我想要能够在线支付，以便于预定流程简单化</li>
+<li>作为一个球场管理员，我希望能用分配的账号登录球场网上预约系统，一以便使用系统的管理功能</li>
+<li>作为一个球场管理员，我希望能够在在校园球场网上预约系统上设置每个球场的空闲场地和价格，以便于灵活管理球场场地</li>
+</ul>
+<h1 id="问题思考"><a href="#问题思考" class="headerlink" title="问题思考"></a>问题思考</h1><h2 id="a、-需求说明的评审："><a href="#a、-需求说明的评审：" class="headerlink" title="a、    需求说明的评审："></a>a、    需求说明的评审：</h2><p>软件项目中，需求分析是最开始的工作，同时也是最重要的工作。在一个规范的软件工程项目中，前期需要投入相当一部分精力去做好项目的需求分析，需求分析如果做得不够详细或者偏离了用户的需求，或者有缺陷的话，往往会项目产生巨大的影响，甚至会有灭顶之灾。<br>为了做好一个项目的需求评审，需要一个合理且有效的评审机制，下面是我认为的需求评审中重要的几个问题：</p>
+<blockquote>
+<p>给予充足的评审时间</p>
+</blockquote>
+<p>敏捷开发是小团队比较喜欢的开发模式，但是很多人往往曲解的敏捷开发，把时间和精力全都放在编码上，对于项目的需求没有做过多的探索和确定，往往在开发的过程中软件的需求也会产生变化，导致项目进度效率反而地下。我认为很重要的一部分是不要缩减评审需求的时间。</p>
+<blockquote>
+<p>分阶段分层次评审</p>
+</blockquote>
+<p>用户的需求是可以分层次的，不同的需求对应不同的开发阶段，一般按阶段按层次将用户需求按如下分：</p>
+<ul>
+<li>体目标性需求</li>
+<li>功能需求</li>
+<li>性能需求</li>
+<li>用户体验需求</li>
+</ul>
+<blockquote>
+<p>评审人员选择</p>
+</blockquote>
+<p>为了保证最终评审出的需求报告符合各个层次的相关人员的要求，做到用户需求分析完整，功能性能需求工程师能够实现，因此需要把各个层次的相关人员都囊括起来。这些相关人员包括：目标用户、需求分析员、产品经理、架构师、编码人员、测试人员等等。</p>
+<blockquote>
+<p>需求审查与核对</p>
+</blockquote>
+<p>做出一个详细的需求报告出来后，需要向需求方和实现方多次沟通和核对，对不合理的地方进行纠正，对有漏洞的地方进行补充。</p>
+<blockquote>
+<p>建立评审需求流程</p>
+</blockquote>
+<p>最好的办法是在一定的经验上，将需求评审的过程流程化，在流程的每一个步骤需要做哪方面的工作，都比较清楚。</p>
+<h2 id="c、优先级管理"><a href="#c、优先级管理" class="headerlink" title="c、优先级管理"></a>c、优先级管理</h2><p>需求的优先级管理说到底就是对要做的事情的价值排序，因此关键问题是如何对这些需求价值排序，不同的人对于价值有不同的判断，在不同职位的人也对价值有不同的判断，因此需要整个团队形成一个认同逻辑，统一站在一起，考虑产品的未来发展。总体上我认为应该注重以下几个原则：</p>
+<ul>
+<li>符合用户要求：调研数据显示用户确实需要的需求</li>
+<li>商业价值：能带来商业价值</li>
+<li>设计架构规划：系统前期不要太复杂，但是后期可拓展性强</li>
+</ul>
+<h2 id="d、非功能需求的提出管理"><a href="#d、非功能需求的提出管理" class="headerlink" title="d、非功能需求的提出管理"></a>d、非功能需求的提出管理</h2><p>一个软件系统具有很多非功能需求，比如安全性问题，并发性能问题，使用性和可用性问题，这些问题不对应某一个具体的功能，但是对于整个软件系统至关重要。对于这些需求的管理，根据我的项目经验，需要做到：</p>
+<blockquote>
+<p>完成基本需求</p>
+</blockquote>
+<p>对于一个软件系统，非功能需求有一个基本指标，比如：用户密码加密存储，使用性不能太差，并且在软件系统开发时，不能留有常见的系统漏洞，这些基本非功能需求都需要满足。</p>
+<blockquote>
+<p>明确用户指标</p>
+</blockquote>
+<p>对于同一个功能的软件系统，可能需求的性能指标完全不同，所以对于这类需求，在需求分析期间得完全明确。比如一个微信抢票应用，需要有多大的并发能力，这在需求分析的时候有一个预估。比如是否需要使用https协议，是否需要使用CDN加速等等。</p>
+<blockquote>
+<p>可拓展性</p>
+</blockquote>
+<p>一个软件系统从开始投入使用到用户的逐渐增多，它也在不断的动态变化，因此需要不断的对它进行维护和拓展。对于非功能需求来说，这种可拓展性就更加重要，一开始投入使用，系统用户在一个增长过程，对于并发压力，性能指标要求比较低，随着用户的增多，需要在性能上提升系统的承受能力，因此需要在顶层设计和架构时，能很好的拓展性能。</p>
+<h2 id="e、创造性产品的需求的提出"><a href="#e、创造性产品的需求的提出" class="headerlink" title="e、创造性产品的需求的提出"></a>e、创造性产品的需求的提出</h2><p>创造性的优秀产品是如何炼成的，我认为应该符合几点标准：</p>
+<ul>
+<li><p>符合用户习惯，以用户实际需求为基础</p>
+<p>  任何优秀的产品火起来的基础都是能够符合用户的习惯，有实际的用户需求，这样的产品才能被用户接受并且长久使用，否则终究只会是昙花一现。因此，在提出这些需求之前，一定是做好了充分的市场调研，充分了解用户对要设计产品的需求，以及用户习惯，这是提出一个新产品的前提。</p>
+</li>
+<li><p>想象力</p>
+<p>  缺乏想象力，缺乏对未来的构想，是难以创新和创造的。这种想象力是要能打破常规，不被自己已有的经验束缚，不被权威所羁绊，因此需要一个充满想象力的团队，不被常规束缚，每个人都对产品有自己的想法，思想能够互相碰撞。</p>
+</li>
+<li><p>可行性<br>  在天马行空的提出需求时，也同时需要考虑当前的科技水平和生产力水平，因为是在做产品，而不是做研究，需要考虑现实问题，提出的需求是否一定能实现。</p>
+</li>
+</ul>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/28/2016年书单影单/" itemprop="url">
+                  2016年书单影单
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-12-28T00:00:00+08:00" content="2016-12-28">
+              2016-12-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>记录即将过去的2016年，我阅读过的书，以及看过的电影，后续慢慢修改更新</p>
+<h2 id="书单"><a href="#书单" class="headerlink" title="书单"></a>书单</h2><p>本来2015年终写总结的时候，目标是2016年要读书30本的（其实也不多），但是到目前为止，数量上也就差不多一半吧，而且也没有广泛涉猎，看小说比较多，《明朝那些事》也是当小说的形式来看的，强行想培养自己的读书习惯，看来是还差很远，但是多少也还是看了些书，也罗列出来作为记录。2017年的目标，依然是阅读30本书吧，并且希望能够多方涉猎，小说、心理学、经济学、历史、专业相关等等。</p>
+<p>下面是我2016年看过的一些书籍，也没啥可以推荐的。</p>
+<h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><blockquote>
+<p>《明朝那些事》（1-6）</p>
+<p>《台湾不能说的秘密》</p>
+<h3 id="小说"><a href="#小说" class="headerlink" title="小说"></a>小说</h3><p>《白夜行》</p>
+<p>《解忧杂货店》</p>
+<p>《许三观卖血记》</p>
+<p>《活着》</p>
+<p>《我不是潘金莲》 </p>
+</blockquote>
+<h3 id="故事集"><a href="#故事集" class="headerlink" title="故事集"></a>故事集</h3><blockquote>
+<p>《不正常人症候群》</p>
+</blockquote>
+<h3 id="专业相关"><a href="#专业相关" class="headerlink" title="专业相关"></a>专业相关</h3><blockquote>
+<p>《spring教程》</p>
+<p>《从物联网到工业4.0》</p>
+<p>《浪潮之巅》</p>
+</blockquote>
+<h2 id="影单"><a href="#影单" class="headerlink" title="影单"></a>影单</h2><h3 id="电影"><a href="#电影" class="headerlink" title="电影"></a>电影</h3><p>书没看多少本，电影倒是看了不少= =，而且还有很多值得推荐的电影，下面整理一下我这一年来看过的电影。</p>
+<blockquote>
+<p>动画片</p>
+</blockquote>
+<p>《疯狂动物城》</p>
+<blockquote>
+<p>恐怖片</p>
+</blockquote>
+<p>《两个月亮》</p>
+<p>《哭声》</p>
+<p>《红衣小女孩》</p>
+<p>《厉鬼将映》</p>
+<blockquote>
+<p>惊悚犯罪片</p>
+</blockquote>
+<p>《树大招风》</p>
+<p>《老笠》</p>
+<blockquote>
+<p>爱情片</p>
+</blockquote>
+<p>《假如爱有天意》</p>
+<p>《初恋50次》</p>
+<blockquote>
+<p>悬疑片</p>
+</blockquote>
+<p>《白夜行》（韩国版）</p>
+<p>《嫌疑人X的献身》</p>
+<p>《唐人街探案》</p>
+<blockquote>
+<p>谍战片</p>
+</blockquote>
+<p>《谍影重重5》</p>
+<p>《嫌疑人》</p>
+<p>《寒战2》</p>
+<blockquote>
+<p>无脑爆米花片</p>
+</blockquote>
+<p>《蚁人》 </p>
+<p>《星球大战：原力觉醒》</p>
+<p>《美国队长3》</p>
+<p>《魔兽》</p>
+<p>《X战警：天启》</p>
+<p>《神奇动物在哪里》</p>
+<p>《佩小姐的奇幻城堡》</p>
+<p>《惊天魔盗团2》</p>
+<p>《美人鱼》</p>
+<blockquote>
+<p>温情片&amp;励志片</p>
+</blockquote>
+<p>《阳光姐妹淘》</p>
+<p>《垫底辣妹》</p>
+<p>《爆裂鼓手》</p>
+<blockquote>
+<p>讽寓故事片</p>
+</blockquote>
+<p>《驴得水》</p>
+<p>《比利林恩的中场故事》</p>
+<p>《熔炉》</p>
+<p>《本杰明·巴顿奇事》</p>
+<blockquote>
+<p>丧尸片</p>
+</blockquote>
+<p>《釜山行》</p>
+<blockquote>
+<p>战争片</p>
+</blockquote>
+<p>《血战钢锯岭》</p>
+<p>《湄公河行动》</p>
+<h3 id="美剧"><a href="#美剧" class="headerlink" title="美剧"></a>美剧</h3><p>《疑犯追踪》（1-4）强烈推荐，但是当我看到第4季的时候，看不动了，那个时候已经开始疲乏了，然后开始感觉剧情有点拖沓了，而且我喜欢的那个黑人女警察居然在第三季的时候就领了便当了。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/27/oozie配置错误集合/" itemprop="url">
+                  Oozie配置错误集合
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-12-27T00:00:00+08:00" content="2016-12-27">
+              2016-12-27
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>最近在实验室集群上第二次尝试build并且部署oozie时，发现还是会遇到以前解决过的问题，虽然依稀记得解决方案，对照着之前的配置，但是还是花了不少时间，这次把问题全部都解决之后，还是决定花点时间把问题汇总并且记录下来，后续还会总结和补充进来。</p>
+<h2 id="1：JA006-Call-From-to-0-0-0-0-10020-failed-on-connection-exception，"><a href="#1：JA006-Call-From-to-0-0-0-0-10020-failed-on-connection-exception，" class="headerlink" title="1：JA006: Call From ** to 0.0.0.0:10020 failed on connection exception，"></a>1：JA006: Call From ** to 0.0.0.0:10020 failed on connection exception，</h2><p>说明hadoop集群的historyserver没有打开，oozie在成功运行完一个workflow时，尝试连接historyserver，会连接连接失败，导致这个错误。<br>解决方法：启动historyserver<br>在hadoop主目录下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sbin/mr-jobhistory-daemon.sh   start historyserver</div></pre></td></tr></table></figure></p>
+<p>然后在map-site.xml里面，把下面的mapreduce.jobhistory.address的value设置为0.0.0.0:10020或那台机器的域名加port。</p>
+<h2 id="2：JA002-SIMPLE-authentication-is-not-enabled-Available-TOKEN"><a href="#2：JA002-SIMPLE-authentication-is-not-enabled-Available-TOKEN" class="headerlink" title="2：JA002: SIMPLE authentication is not enabled.  Available:[TOKEN]"></a>2：JA002: SIMPLE authentication is not enabled.  Available:[TOKEN]</h2><p>这是因为oozie的任务要在yarn上运行，但是jobtracker指定的地址和端口错误，需要把地址和端口指定如下,  否则会报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">    &lt;name&gt;yarn.resourcemanager.address&lt;/name&gt;</div><div class="line">    &lt;value&gt;pc57:8050&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+<h2 id="3：error-IllegalArgumentException-Wrong-FS-hdfs-user-ubuntu-share-lib-expected-file"><a href="#3：error-IllegalArgumentException-Wrong-FS-hdfs-user-ubuntu-share-lib-expected-file" class="headerlink" title="3：error: IllegalArgumentException: Wrong FS: hdfs://**/user/ubuntu/share/lib, expected: file:///"></a>3：error: IllegalArgumentException: Wrong FS: hdfs://**/user/ubuntu/share/lib, expected: file:///</h2><p>出现这个问题说明是oozie不能找到正确的fs位置，就会去找默认的fs.defaultFs = FILE:///，问题出现在oozie的hadoop配置</p>
+<p>解决方案如下：</p>
+<p>需要在oozie/conf/hadoop-conf/目录下把core-site.xml 中加上fs.defaultFS参数，指定hadoop hdfs的默认位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">    &lt;name&gt;fs.defaultFS&lt;/name&gt;</div><div class="line">    &lt;value&gt;hdfs://pc57:8020&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/12/leetcode-166-Fraction-to-Recurring-Decimal/" itemprop="url">
+                  leetcode/166. Fraction to Recurring Decimal
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-10-12T19:54:48+08:00" content="2016-10-12">
+              2016-10-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="question"><a href="#question" class="headerlink" title="question:"></a>question:</h1><p>Given two integers representing the numerator and denominator of a fraction, return the fraction in string format.<br>If the fractional part is repeating, enclose the repeating part in parentheses.<br>For example,<br>Given numerator = 1, denominator = 2, return “0.5”.<br>Given numerator = 2, denominator = 1, return “2”.<br>Given numerator = 2, denominator = 3, return “0.(6)”.</p>
+<h1 id="answer"><a href="#answer" class="headerlink" title="answer:"></a>answer:</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>两个整数相除，将结果表示为小数字符串形式，思路来源于小学除法，以”1/9”为例，1除以9，商为0，余数为1，这时商被记下，余数乘以10，然后作为新的被除数，再去除除数9，商数为1，余数为1，循环继续下去。<br>对于计算机整数运算，可以直接求出商和余数，因此计算过程分为整数部分和小数部分：</p>
+<blockquote>
+<p>整数部分</p>
+</blockquote>
+<p>商 = 被除数 / 除数<br>余数 = 被除数 % 除数</p>
+<blockquote>
+<p>小数部分</p>
+</blockquote>
+<p>余数 = 余数 * 10<br>商 = 余数 / 除数<br>余数 = 余数 / 除数</p>
+<blockquote>
+<p>记录循环节</p>
+</blockquote>
+<p>循环除的过程，每次都有一个余数，若是整除，最终余数=0，退出循环，若是不能整除，则需要记录循环节，也就是记录每次的余数，当后面出现前面出现过的余数，表明循环已经出现，停止循环，找出循环节。相关细节问题，见java源代码</p>
+<h2 id="Java代码如下"><a href="#Java代码如下" class="headerlink" title="Java代码如下"></a>Java代码如下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public static String fractionToDecimal(int numerator, int denominator) &#123;</div><div class="line">	//除数为0，直接返回0</div><div class="line">    	if (numerator == 0)</div><div class="line">    		return &quot;0&quot;;</div><div class="line">    	String result = &quot;&quot;;</div><div class="line">	//异或，如果除数或者被除数有一个为负数，result为负数</div><div class="line">    	if(numerator&lt;0 ^ denominator&lt;0)</div><div class="line">    		result += &quot;-&quot;; </div><div class="line">	//int类型的整数，会溢出，变为long类型</div><div class="line">    	long n = Math.abs(numerator);</div><div class="line">    	long d = Math.abs(denominator);</div><div class="line">	//这里有一个问题：当Math.abs(a)的参数a=Integer.MIN_VALUE，即-2147483648时，函数返回值还是-2147483648，因此这里需要特别处理，原因见下面Math.abs()函数注释</div><div class="line">    	if (d == Integer.MIN_VALUE)&#123;</div><div class="line">    		d = -d;</div><div class="line">    	&#125;</div><div class="line">    	if (n == Integer.MIN_VALUE)&#123;</div><div class="line">    	    n = -n;</div><div class="line">    	&#125;</div><div class="line">        long quotient = 0;  //商数</div><div class="line">        long remainder = 0; //余数</div><div class="line">        boolean loop = false;</div><div class="line">        int index_s = 0;</div><div class="line">        int index_e = 0;</div><div class="line">        int index_dot = 0;</div><div class="line">        quotient = n / d;</div><div class="line">        remainder = n % d;</div><div class="line">	//使用HashMap记录当前余数，以及当前余数对应的小数位数，当后面出现了HashMap中有的余数时，表示循环节完毕。</div><div class="line">        HashMap&lt;Long,Integer&gt; flag = new HashMap&lt;Long,Integer&gt;();</div><div class="line">        int index = 0;</div><div class="line">        if(remainder == 0)&#123;</div><div class="line">            result += String.valueOf(quotient);</div><div class="line">            return result;</div><div class="line">        &#125;</div><div class="line">        result = result + String.valueOf(quotient) + &quot;.&quot;;</div><div class="line">        flag.put(remainder,index);</div><div class="line">        index = index + 1;</div><div class="line">        remainder = remainder * 10;</div><div class="line">        while(remainder != 0)&#123;</div><div class="line">            quotient = remainder / d;</div><div class="line">            remainder = remainder % d;</div><div class="line">            if(quotient == 0)&#123;</div><div class="line">                result = result + &quot;0&quot;;</div><div class="line">                flag.put(remainder,index);</div><div class="line">                remainder = remainder * 10;</div><div class="line">                index = index + 1;</div><div class="line">                continue;</div><div class="line">            &#125;</div><div class="line">            else&#123;</div><div class="line">                result = result + String.valueOf(quotient);</div><div class="line">                if(remainder == 0)&#123;</div><div class="line">                    return result;</div><div class="line">                &#125;</div><div class="line">                else&#123;</div><div class="line">                    if(flag.containsKey(remainder))&#123;</div><div class="line">                        loop = true;</div><div class="line">                        break;</div><div class="line">                    &#125;</div><div class="line">                    flag.put(remainder,index);</div><div class="line">                    index = index + 1;</div><div class="line">                    remainder = remainder * 10;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        if(loop == true)&#123;</div><div class="line">            index_dot = result.indexOf(&quot;.&quot;);</div><div class="line">            index_s = flag.get(remainder) + index_dot + 1;</div><div class="line">            index_e = index;</div><div class="line">            StringBuffer result_buffer = new StringBuffer(result);</div><div class="line">            String strInsert = &quot;(&quot;;</div><div class="line">            result_buffer.insert(index_s ,strInsert);</div><div class="line">            result = result_buffer.toString() + &quot;)&quot;;</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><p>Java 取绝对值函数说明,注意其中的Note说明。<br><img src="/2016/10/12/leetcode-166-Fraction-to-Recurring-Decimal/java_abs.png" alt="java_abs"></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/11/leetcode/LongestSubstringWithoutRepeatingCharacters/" itemprop="url">
+                  leetcode/3.Longest Substring Without Repeating Characters
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-10-11T00:00:00+08:00" content="2016-10-11">
+              2016-10-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="question"><a href="#question" class="headerlink" title="question:"></a>question:</h1><p>Given a string, find the length of the longest substring without repeating characters.</p>
+<h1 id="example"><a href="#example" class="headerlink" title="example"></a>example</h1><p>Given “abcabcbb”, the answer is “abc”, which the length is 3.<br>Given “bbbbb”, the answer is “b”, with the length of 1.<br>Given “pwwkew”, the answer is “wke”, with the length of 3. Note that the answer must be a substring, “pwke” is a subsequence and not a substring.</p>
+<h1 id="answer"><a href="#answer" class="headerlink" title="answer:"></a>answer:</h1><p>遍历s,用HashMap记录，在HashMap中没有出现过的字符，放入，并随时记录最长非重复子串的长度。当遇到出现过的字符，清空map，并从这个字符出现的index的下一位开始重新记录。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int lengthOfLongestSubstring(String s) &#123;</div><div class="line">        if (s == null)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        else if (s.length() &lt;= 1)&#123;</div><div class="line">            return s.length();</div><div class="line">        &#125;</div><div class="line">        int longest = -1;</div><div class="line">        HashMap &lt;Character, Integer&gt; map = new HashMap&lt;Character, Integer&gt;();</div><div class="line">        for(int i = 0; i &lt; s.length(); i++)&#123;</div><div class="line">            char c = s.charAt(i);</div><div class="line">            if(map.containsKey(c))&#123;</div><div class="line">                longest = Math.max(map.size(),longest);</div><div class="line">                i = map.get(c);</div><div class="line">                map.clear();</div><div class="line">            &#125;</div><div class="line">            else&#123;</div><div class="line">                map.put(c,i);</div><div class="line">                longest = Math.max(map.size(),longest);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        map.clear();</div><div class="line">        return longest;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/17/hadoop集群搭建/" itemprop="url">
+                  Oozie系统研究（二）——搭建hadoop集群
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-07-17T10:30:14+08:00" content="2016-07-17">
+              2016-07-17
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="博客说明"><a href="#博客说明" class="headerlink" title="博客说明"></a>博客说明</h1><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在整个学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录总结， 方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正。<br>上一篇博客简要介绍了oozie，这篇博客开始介绍从0开始搭建hadoop集群。</p>
+<h1 id="Oozie环境依赖"><a href="#Oozie环境依赖" class="headerlink" title="Oozie环境依赖"></a>Oozie环境依赖</h1><ul>
+<li>Unix box (tested on Mac OS X and Linux)</li>
+<li>Java JDK 1.6+</li>
+<li>Maven 3.0.1+</li>
+<li>Hadoop 0.20.2+</li>
+<li>Pig 0.7+</li>
+<li>ExtJS library (optional, to enable Oozie webconsole)</li>
+</ul>
+<p>由于oozie对于依赖软件的版本要求很严格，最新版hadoop2.7.2尚未找到有人成功适配Oozie4.2.0，所以我选择的是hadoop2.6.4。java最新版是1.8，但是在尝试用1.8配置环境过程中，会因为版本问题出现bug，所以退回1.7，完美运行。ExtJS Library只允许用2.2版本，其他版本都不行。所以本次实验的环境如下：</p>
+<ul>
+<li>Ubuntu 14.04 LTS</li>
+<li>Java JDK 1.7</li>
+<li>Hadoop 2.6.4</li>
+<li>ExtJS library 2.2</li>
+<li>Maven 3.3.9</li>
+</ul>
+<h1 id="节点搭建"><a href="#节点搭建" class="headerlink" title="节点搭建"></a>节点搭建</h1><p>本次实验，使用了3个节点，一个namenode节点和两个datanode节点，分别记为datanode0和datanode1，hostname和ip分别为如下，并且设置三个节点的用户均为ubuntu：</p>
+<table>
+<thead>
+<tr>
+<th>节点名</th>
+<th>内网ip地址    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>namenode</td>
+<td>166.111.81.154</td>
+</tr>
+<tr>
+<td>datanode0</td>
+<td>166.111.81.162</td>
+</tr>
+<tr>
+<td>datanode1</td>
+<td>166.111.81.164</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h2><p>在配置的过程中，为了更加方便，不用去记ip，在~/.ssh/中新建一个配置文件config，配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Host namenode</div><div class="line">  HostName 166.111.81.154</div><div class="line">  User ubuntu</div><div class="line"></div><div class="line">Host datanode0</div><div class="line">  HostName 166.111.81.162</div><div class="line">  User ubuntu</div><div class="line"></div><div class="line">Host datanode1</div><div class="line">  HostName 166.111.81.164</div><div class="line">  User ubuntu</div></pre></td></tr></table></figure></p>
+<h3 id="配置PasswordLess-SSH"><a href="#配置PasswordLess-SSH" class="headerlink" title="配置PasswordLess SSH"></a>配置PasswordLess SSH</h3><p>hadoop集群节点间通讯通过ssh，namenode需要无密码连接到datanode，配置的步骤如下：<br>第一步：在namenode节点上生成Authentication SSH-Kegen Keys<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ ssh-keygen -t rsa</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/ubuntu/.ssh/id_rsa): [Press enter key]</div><div class="line">Created directory <span class="string">'/home/ubuntu/.ssh'</span>.</div><div class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): [Press enter key]</div><div class="line">Enter same passphrase again: [Press enter key]</div><div class="line">Your identification has been saved <span class="keyword">in</span> /home/ubuntu/.ssh/id_rsa.</div><div class="line">Your public key has been saved <span class="keyword">in</span> /home/ubuntu/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div><div class="line">5f:ad:40:00:8a:d1:9b:99:b3:b0:f8:08:99:c3:ed:d3 ubuntu@namenode</div><div class="line">The key<span class="string">'s randomart image is:</span></div><div class="line">+--[ RSA 2048]----+</div><div class="line">|        ..oooE.++|</div><div class="line">|         o. o.o  |</div><div class="line">|          ..   . |</div><div class="line">|         o  . . o|</div><div class="line">|        S .  . + |</div><div class="line">|       . .    . o|</div><div class="line">|      . o o    ..|</div><div class="line">|       + +       |</div><div class="line">|        +.       |</div><div class="line">+-----------------+</div><div class="line"></div><div class="line">ubuntu@namenode:~$ cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</div></pre></td></tr></table></figure></p>
+<p>第二步：在datanode节点上创建~/.ssh路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ ssh ubuntu@datanode0 mkdir -p .ssh</div><div class="line">The authenticity of host <span class="string">'166.111.81.162 (166.111.81.162)'</span> can<span class="string">'t be established.</span></div><div class="line">RSA key fingerprint is 45:0e:28:11:d6:81:62:16:04:3f:db:38:02:la:22:4e.</div><div class="line">Are you sure you want to continue connecting (yes/no)? yes</div><div class="line">Warning: Permanently added '166.111.81.162<span class="string">' (ECDSA) to the list of known hosts.</span></div><div class="line">ubuntu@166.111.81.162's password: &lt;mark&gt;[Enter Your Password Here]&lt;/mark&gt;</div></pre></td></tr></table></figure></p>
+<p>datanode1同理<br>第三步：上传public keys到datanode<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ cat .ssh/id_rsa.pub | ssh ubuntu@datanode0 <span class="string">'cat &gt;&gt; .ssh/authorized_keys'</span></div><div class="line"></div><div class="line">ubuntu@166.111.81.162<span class="string">'s password: [Enter Your Password Here]</span></div></pre></td></tr></table></figure></p>
+<p>datanode1同理<br>第四步：设置访问.ssh权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ ssh ubuntu@datanode0 <span class="string">"chmod 700 .ssh; chmod 640 .ssh/authorized_keys"</span></div><div class="line"> </div><div class="line">ubuntu@166.111.81.162<span class="string">'s password: [Enter Your Password Here]</span></div></pre></td></tr></table></figure></p>
+<p>datanode1同理,同时，namenode本地也设置一下.ssh权限，代码同上。<br>通过以上四步，就可以在namenode接单上直接<code>ssh datanode0</code>连接datanode节点了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ ssh datanode0</div></pre></td></tr></table></figure></p>
+<h1 id="hadoop-安装"><a href="#hadoop-安装" class="headerlink" title="hadoop 安装"></a>hadoop 安装</h1><p>passwordless，接下来开始安装和配置hadoop集群。共有三个节点，并且三个节点的配置有很多相似之处，所以，配合Iterm来配置，效果最好的啦,左上是namenode，右上是datanode1，右下是datanode0，左下候补。<br><img src="/2016/07/17/hadoop集群搭建/Iterm.png" alt="Iterm分屏"></p>
+<h2 id="安装java"><a href="#安装java" class="headerlink" title="安装java"></a>安装java</h2><p>一般ubuntu都会预装java，如果有预装并且版本是1.7的话，就直接可以用，否则安装java。（如下allnodes代表所有节点，下同）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">allnodes:~$ sudo apt-get update</div><div class="line">allnodes:~$ sudo apt-get install openjdk-7-jdk</div></pre></td></tr></table></figure></p>
+<p>设置环境变量如下，打开<code>~/.profile</code>，添加如下，保存后<code>. ~/.profile</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</div><div class="line">export PATH=$PATH:$JAVA_HOME/bin</div></pre></td></tr></table></figure></p>
+<p>安装完之后，测试java版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">allnodes:~$ java -version</div><div class="line">java version <span class="string">"1.7.0_101"</span></div><div class="line">OpenJDK Runtime Environment (IcedTea 2.6.6) (7u101-2.6.6-0ubuntu0.14.04.1)</div><div class="line">OpenJDK 64-Bit Server VM (build 24.95-b01, mixed mode)</div></pre></td></tr></table></figure></p>
+<h2 id="安装maven"><a href="#安装maven" class="headerlink" title="安装maven"></a>安装maven</h2><p>maven在编译oozie时需要用到，先安装上，并且只需要在namenode节点安装即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ wget https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz -P ~/Downloads</div><div class="line">ubuntu@namenode:~$ sudo tar ~/Downloads/apache-maven-3.39-bin.tar.gz -C /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
+<p>环境变量设置如下,打开<code>~/.profile</code>，添加如下，保存后<code>. ~/.profile</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> MAVEN_HOME=/usr/<span class="built_in">local</span>/apache-maven-3.3.9</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$MAVEN_HOME</span>/bin</div></pre></td></tr></table></figure></p>
+<p>设置好之后，测试maven安装，结果如下，说明安装成功。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ mvn -version</div><div class="line">Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-11T00:41:47+08:00)</div><div class="line">Maven home: /usr/<span class="built_in">local</span>/apache-maven-3.3.9</div><div class="line">Java version: 1.7.0_101, vendor: Oracle Corporation</div><div class="line">Java home: /usr/lib/jvm/java-7-openjdk-amd64/jre</div><div class="line">Default locale: zh_CN, platform encoding: UTF-8</div><div class="line">OS name: <span class="string">"linux"</span>, version: <span class="string">"4.2.0-27-generic"</span>, arch: <span class="string">"amd64"</span>, family: <span class="string">"unix"</span></div></pre></td></tr></table></figure></p>
+<h2 id="hadoop安装"><a href="#hadoop安装" class="headerlink" title="hadoop安装"></a>hadoop安装</h2><p>首先下载hadoop2.6.4到<code>~/Downloads</code>下，然后将其解压到<code>/usr/local</code>目录下。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">allnodes:~$ wget http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-2.6.4/hadoop-2.6.4.tar.gz -P ~/Downloads</div><div class="line">allnodes:~$ sudo tar zxvf ~/Downloads/hadoop-2.6.4 -C /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
+<p>环境变量设置，打开<code>~/.profile</code>，添加如下，保存后<code>. ~/.profile</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> HADOOP_HOME=/usr/<span class="built_in">local</span>/hadoop-2.6.4</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$HADOOP_HOME</span>/bin</div><div class="line"><span class="built_in">export</span> HADOOP_CONF_DIR=/usr/<span class="built_in">local</span>/hadoop-2.6.4/etc/hadoop</div></pre></td></tr></table></figure></p>
+<h2 id="hadoop配置"><a href="#hadoop配置" class="headerlink" title="hadoop配置"></a>hadoop配置</h2><p>要建立一个hadoop集群，有少数几个文件用来控制一个Hadoop安装的配置，其中最重要的一些文件如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>格式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hadoop-env.sh</td>
+<td>bash脚本</td>
+<td>在运行Hadoop脚本中使用的环境变量</td>
+</tr>
+<tr>
+<td>core-site.xml</td>
+<td>Hadoop配置XML</td>
+<td>Hadoop的核心配置，例如HDFS和MapReduce中很普遍的I/O设置</td>
+</tr>
+<tr>
+<td>hdfs-site.xml</td>
+<td>Hadoop配置XML</td>
+<td>HDFS后台程序的配置：名称节点，第二名称节点和数据节点</td>
+</tr>
+<tr>
+<td>mapred-site.xml</td>
+<td>Hadoop配置XMl</td>
+<td>Mapreduce后台程序配置：jobtracker和tasktracker</td>
+</tr>
+<tr>
+<td>masters</td>
+<td>纯文本</td>
+<td>记录运行第二名称节点的机器（一行一个）</td>
+</tr>
+<tr>
+<td>slaves</td>
+<td>纯文本</td>
+<td>记录运行数据节点和tasktracker的机器的列表（一行一个）</td>
+</tr>
+<tr>
+<td>hadoop-metrics.properties</td>
+<td>JAVA属性</td>
+<td>控制Hadoop怎么发布metrics</td>
+</tr>
+<tr>
+<td>log4j.properties</td>
+<td>JAVA属性</td>
+<td>系统日志文件的属性，名称节点审计日志和tasktracker子进程的日志属性</td>
+</tr>
+</tbody>
+</table>
+<p>除了hadoop-metrics.properties和log4j.properties这两个文件可以暂时不修改，其他配置文件是搭建hadoop集群必须要配置的文件。namenode和datanode的配置有些许不同，这里先配置所有节点都需要的配置，然后再分别配置namenode和datanode的特定配置。</p>
+<h3 id="共同配置"><a href="#共同配置" class="headerlink" title="共同配置"></a>共同配置</h3><p>首先修改<code>$HADOOP_CONF_DIR/hadoop-env.sh</code>，修改<code>$JAVA_HOME的路径</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># The java implementation to use.</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</div></pre></td></tr></table></figure></p>
+<p>修改<code>$HADOOP_CONF_DIR/core-site.xml</code>,声明默认的hadoop文件系统，默认的配置是设为localhost，这里我们设定为namenode的ip，端口为9000。滑动到configuration标签下，将文件修改为如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">  &lt;property&gt;</div><div class="line">    &lt;name&gt;fs.defaultFS&lt;/name&gt;</div><div class="line">    &lt;value&gt;hdfs://166.111.81.154:9000&lt;/value&gt;</div><div class="line">  &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
+<p>修改<code>$HADOOP_CONF_DIR/yarn-site.xml</code>,找到文件里的configuration标签，将文件修改成如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line"></div><div class="line">&lt;!-- Site specific YARN configuration properties --&gt;</div><div class="line"></div><div class="line">  &lt;property&gt;</div><div class="line">    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</div><div class="line">    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</div><div class="line">  &lt;/property&gt; </div><div class="line">  &lt;property&gt;</div><div class="line">    &lt;name&gt;yarn.nodemanager.aux-services.mapreduce.shuffle.class&lt;/name&gt;</div><div class="line">    &lt;value&gt;org.apache.hadoop.mapred.ShuffleHandler&lt;/value&gt;</div><div class="line">  &lt;/property&gt;</div><div class="line">  &lt;property&gt;</div><div class="line">    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;</div><div class="line">    &lt;value&gt;166.111.81.154&lt;/value&gt;</div><div class="line">  &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
+<p>最后要修改的是<code>$HADOOP_CONF_DIR/mapred-site.xml</code>,需要先copy一份mapred-site.xml.template，重命名为mapred-site.xml，找到configuration这个标签，在标签内添加如下内容，配置了jobtracker端口。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">  &lt;property&gt;</div><div class="line">    &lt;name&gt;mapreduce.jobtracker.address&lt;/name&gt;</div><div class="line">    &lt;value&gt;166.111.81.154:54311&lt;/value&gt;</div><div class="line">  &lt;/property&gt;</div><div class="line">  &lt;property&gt;</div><div class="line">    &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</div><div class="line">    &lt;value&gt;yarn&lt;/value&gt;</div><div class="line">  &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="namenode配置"><a href="#namenode配置" class="headerlink" title="namenode配置"></a>namenode配置</h3><p>公共的配置结束了，现在配置namenode节点。需要配置的主要有如下几点：</p>
+<ul>
+<li>在<code>/etc/hosts</code>中添加hosts</li>
+<li>修改<code>$HADOOP_CONF_DIR/hdfs-site.xml</code>配置</li>
+<li>在<code>$HADOOP_CONF_DIR/masters</code>中定义master节点</li>
+<li>在<code>$HADOOP_CONF_DIR/slaves</code>中定义slaves节点</li>
+</ul>
+<p>首先修改hosts，在<code>/etc/hosts</code>中添加节点的hostname和ip，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">166.111.81.154 namenode</div><div class="line">166.111.81.162 datanode0</div><div class="line">166.111.81.164 datanode1</div><div class="line"></div><div class="line">127.0.0.1       localhost</div><div class="line">127.0.1.1       ubuntu14.04     ubuntu14</div><div class="line"></div><div class="line"><span class="comment"># The following lines are desirable for IPv6 capable hosts</span></div><div class="line">::1     localhost ip6-localhost ip6-loopback</div><div class="line">ff02::1 ip6-allnodes</div><div class="line">ff02::2 ip6-allrouters</div></pre></td></tr></table></figure></p>
+<p>系统的hostname可以通过<code>hostname</code>查看<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ hostname</div></pre></td></tr></table></figure></p>
+<p>配置$HADOOP_CONF_DIR/hdfs-site.xml，规定副本数，NameNode节点数据存储路径，这里DataNode有两个，副本数为2。vi打开$HADOOP_CONF_DIR/hdfs-site.xml，找到configuration标签，修改成如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">  &lt;property&gt;</div><div class="line">    &lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">    &lt;value&gt;2&lt;/value&gt;</div><div class="line">  &lt;/property&gt;</div><div class="line">  &lt;property&gt;</div><div class="line">    &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;</div><div class="line">    &lt;value&gt;file:///usr/<span class="built_in">local</span>/hadoop/hadoop_data/hdfs/namenode&lt;/value&gt;</div><div class="line">  &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
+<p>设置的NameNode的存储路径是<code>hadoop_data/hdfs/namenode</code>，需要自己新建这个路径：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ sudo mkdir -p <span class="variable">$HADOOP_HOME</span>/hadoop_data/hdfs/namenode</div></pre></td></tr></table></figure></p>
+<p>然后在$HADOOP_CONF_DIR目录下添加一个masters文件，插入NameNode的hostname：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ sudo touch <span class="variable">$HADOOP_CONF_DIR</span>/masters</div><div class="line">ubuntu@namenode:~$ sudo vi <span class="variable">$HADOOP_CONF_DIR</span>/masters</div><div class="line">namenode</div></pre></td></tr></table></figure></p>
+<p>同时需要修改$HADOOP_CONF_DIR目录下的slaves文件，删除默认的localhost，插入datanode的hostname：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ sudo vi <span class="variable">$HADOOP_CONF_DIR</span>/slaves</div><div class="line">datanode0</div><div class="line">datanode1</div></pre></td></tr></table></figure></p>
+<p>现在NameNode上面的配置基本完成了，最后修改$HADOOP_HOME的所有权为<em>ubuntu</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ sudo chown -R ubuntu:ubuntu <span class="variable">$HADOOP_HOME</span></div></pre></td></tr></table></figure></p>
+<h3 id="datanode配置"><a href="#datanode配置" class="headerlink" title="datanode配置"></a>datanode配置</h3><p>datanode首先配置$HADOOP_CONF_DIR/hdfs-site.xml，同样也是规定副本数为2，设置DataNode节点数据存储路径，vi打开$HADOOP_CONF_DIR/hdfs-site.xml，找到configuration标签，修改成如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">  &lt;property&gt;</div><div class="line">    &lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">    &lt;value&gt;2&lt;/value&gt;</div><div class="line">  &lt;/property&gt;</div><div class="line">  &lt;property&gt;</div><div class="line">    &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;</div><div class="line">    &lt;value&gt;file:///usr/<span class="built_in">local</span>/hadoop/hadoop_data/hdfs/datanode&lt;/value&gt;</div><div class="line">  &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
+<p>新建<em>hadoop/hdfs/datanode</em>,<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ubuntu@datanode0:~$ sudo mkdir -p <span class="variable">$HADOOP_HOME</span>/hadoop_data/hdfs/datanode</div></pre></td></tr></table></figure></p>
+<p>datanode的配置只有这个，然后修改$HADOOP_HOME的所有权为<em>ubuntu</em>，就行了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ubuntu@datanode0:~$ sudo chown -R ubuntu <span class="variable">$HADOOP_HOME</span></div></pre></td></tr></table></figure></p>
+<p>上面只修改了datanode0节点的配置，datanode1节点修改同理。</p>
+<h1 id="启动hadoop集群"><a href="#启动hadoop集群" class="headerlink" title="启动hadoop集群"></a>启动hadoop集群</h1><p>现在可以在namenode上面启动hadoop集群了，首先格式化namenode，然后启动HDFS<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ubuntu@namenode:~$ hdfs namenode -format</div><div class="line">ubuntu@namenode:~$ <span class="variable">$HADOOP_HOME</span>/sbin/start-dfs.sh</div></pre></td></tr></table></figure></p>
+<p>出现<em>The authenticity of host ‘Some Node’ can’t be established. Are you sure you want to continue connecting (yes/no)?</em><br>输入yes并回车，因为这是hadoop第一次登录其他datanode。启动完后，在浏览器中namenode:50070查看所有数据节点是否都在线，是否都启动成功，如果显示Live Nodes为2，说明datanode启动成功，否则说明启动失败，需要排除bug后，重新启动HDFS。<br><img src="/2016/07/17/hadoop集群搭建/webUI.png" alt="webUI"></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/" target="_blank" rel="external">SSH Passwordless Login Using SSH Keygen in 5 Easy Steps</a><br><a href="http://insightdataengineering.com/blog/hadoopdevops/#ssh" target="_blank" rel="external">Spinning Up a Free Hadoop Cluster: Step by Step</a></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/13/oozie简介/" itemprop="url">
+                  Oozie系统研究（一）——Oozie简介
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-07-13T19:22:14+08:00" content="2016-07-13">
+              2016-07-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h2 id="博客简介"><a href="#博客简介" class="headerlink" title="博客简介"></a>博客简介</h2><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正<br>这篇博客简单介绍Oozie，作为了解和入门级的内容。</p>
+<h2 id="什么是Oozie？"><a href="#什么是Oozie？" class="headerlink" title="什么是Oozie？"></a>什么是Oozie？</h2><p>如下是oozie官方首页<a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a>的概述说明：<br>Oozie is a workflow scheduler system to manage Apache Hadoop jobs.<br>Oozie Workflow jobs are Directed Acyclical Graphs (DAGs) of actions.<br>Oozie Coordinator jobs are recurrent Oozie Workflow jobs triggered by time (frequency) and data availabilty.<br>Oozie is integrated with the rest of the Hadoop stack supporting several types of Hadoop jobs out of the box (such as Java map-reduce, Streaming map-reduce, Pig, Hive, Sqoop and Distcp) as well as system specific jobs (such as Java programs and shell scripts).<br>Oozie is a scalable, reliable and extensible system.</p>
+<p>可以简单概述Oozie是什么：</p>
+<ul>
+<li>Oozie是管理hadoop作业的调度系统</li>
+<li>Oozie的工作流作业是一系列动作的有向无环图（DAG）</li>
+<li>Oozie协调作业是通过时间（频率）和有效数据触发当前的Oozie工作流程</li>
+<li>Oozie支持各种hadoop作业，例如:java map-reduce、Streaming map-reduce、pig、hive、sqoop和distcp等等，也支持系统特定的作业，例如java程序和shell脚本。</li>
+<li>Oozie是一个可伸缩，可靠和可拓展的系统<br>下面详细介绍一下Oozie的原理和核心组件</li>
+</ul>
+<h2 id="Oozie原理及特点"><a href="#Oozie原理及特点" class="headerlink" title="Oozie原理及特点"></a>Oozie原理及特点</h2><p>Oozie是一种Java Web应用程序，它运行在Java servlet容器——即Tomcat——中，并使用数据库来存储以下内容：</p>
+<ul>
+<li>工作流定义</li>
+<li>当前运行的工作流实例，包括实例的状态和变量</li>
+</ul>
+<p>Oozie的默认数据库是derby，但是可以配置成mysql。<br>Oozie的用DAG（有向无环图 Direct Acyclic Graph）来定义工作流，DAG指定了工作流执行的顺序。Oozie使用hPDL（一种xml流程定义语言）来描述工作流。</p>
+<h2 id="Oozie核心组件"><a href="#Oozie核心组件" class="headerlink" title="Oozie核心组件"></a>Oozie核心组件</h2><p>hPDL是一种很简洁的语言(xml)，hPDL是一种很简洁的语言，只会使用少数流程控制和动作节点。控制节点会定义执行的流程，并包含工作流的起点和终点（start、end和fail节点）以及控制工作流执行路径的机制（decision、fork和join节点），动作节点是一些机制，通过它们工作流会触发执行计算或者处理任务。</p>
+<h3 id="控制流节点"><a href="#控制流节点" class="headerlink" title="控制流节点"></a>控制流节点</h3><ul>
+<li>start</li>
+<li>end</li>
+<li>fail</li>
+<li>decision</li>
+<li>fork-join<h3 id="任务节点"><a href="#任务节点" class="headerlink" title="任务节点"></a>任务节点</h3></li>
+<li>HDFS<ul>
+<li>move, delete, mkdir, chmod, touchz, distcp</li>
+</ul>
+</li>
+<li>Map-Reduce</li>
+<li>Pig</li>
+<li>Hive</li>
+<li>SSH</li>
+<li>Java</li>
+<li>shell</li>
+<li>spark</li>
+</ul>
+<h2 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h2><p><a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a><br><a href="http://www.infoq.com/cn/articles/introductionOozie?utm_source=infoq_en&amp;utm_medium=link_on_en_item&amp;utm_campaign=item_in_other_langs" target="_blank" rel="external">Oozie简介</a></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/14/大数据工作流模式/" itemprop="url">
+                  大数据工作流模式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-06-14T00:00:00+08:00" content="2016-06-14">
+              2016-06-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="大数据工作流模式"><a href="#大数据工作流模式" class="headerlink" title="大数据工作流模式"></a>大数据工作流模式</h1><p>工作流模式大致分为</p>
+<ul>
+<li>控制 control</li>
+<li>资源 resource</li>
+<li>数据 data</li>
+<li>异常处理 Exception Handling</li>
+</ul>
 
             
           </span>
