@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Oozie,hadoop," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -53,16 +53,15 @@
 
 
 
-<meta name="description" content="hadoop&amp;#x96C6;&amp;#x7FA4;&amp;#x535A;&amp;#x5BA2;&amp;#x8BF4;&amp;#x660E;&amp;#x8FD1;&amp;#x671F;&amp;#x5BFC;&amp;#x5E08;&amp;#x8981;&amp;#x6211;&amp;#x7814;&amp;#x7A76;&amp;#x4E00;&amp;#x4E0B;&amp;#x5927;&amp;#x6570;&amp;#x636E;&amp;#x7CFB;&amp;#x7EDF;&amp;#x5F15;&amp;#x64CE;oozie&amp;#x4E">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Oozie系统研究（一）——搭建hadoop集群">
-<meta property="og:url" content="http://huxiaoqiang.github.com/2016/05/19/Oozie安装记录/index.html">
+<meta name="description" content="永远不要停止向前的脚步">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小强的博客">
+<meta property="og:url" content="http://huxiaoqiang.github.com/page/2/index.html">
 <meta property="og:site_name" content="小强的博客">
-<meta property="og:description" content="hadoop&amp;#x96C6;&amp;#x7FA4;&amp;#x535A;&amp;#x5BA2;&amp;#x8BF4;&amp;#x660E;&amp;#x8FD1;&amp;#x671F;&amp;#x5BFC;&amp;#x5E08;&amp;#x8981;&amp;#x6211;&amp;#x7814;&amp;#x7A76;&amp;#x4E00;&amp;#x4E0B;&amp;#x5927;&amp;#x6570;&amp;#x636E;&amp;#x7CFB;&amp;#x7EDF;&amp;#x5F15;&amp;#x64CE;oozie&amp;#x4E">
-<meta property="og:updated_time" content="2016-07-13T12:42:55.000Z">
+<meta property="og:description" content="永远不要停止向前的脚步">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oozie系统研究（一）——搭建hadoop集群">
-<meta name="twitter:description" content="hadoop&amp;#x96C6;&amp;#x7FA4;&amp;#x535A;&amp;#x5BA2;&amp;#x8BF4;&amp;#x660E;&amp;#x8FD1;&amp;#x671F;&amp;#x5BFC;&amp;#x5E08;&amp;#x8981;&amp;#x6211;&amp;#x7814;&amp;#x7A76;&amp;#x4E00;&amp;#x4E0B;&amp;#x5927;&amp;#x6570;&amp;#x636E;&amp;#x7CFB;&amp;#x7EDF;&amp;#x5F15;&amp;#x64CE;oozie&amp;#x4E">
+<meta name="twitter:title" content="小强的博客">
+<meta name="twitter:description" content="永远不要停止向前的脚步">
 
 
 
@@ -74,7 +73,7 @@
   };
 </script>
 
-  <title> Oozie系统研究（一）——搭建hadoop集群 | 小强的博客 </title>
+  <title> 小强的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -95,7 +94,9 @@
 
 
 
-  <div class="container one-column page-post-detail">
+  <div class="container one-column 
+   page-home 
+">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -189,9 +190,15 @@
       <div class="main-inner">
         <div id="content" class="content">
           
+  <section id="posts" class="posts-expand">
 
-  <div id="posts" class="posts-expand">
     
+
+    
+    
+
+    
+      
 
   
   
@@ -211,7 +218,10 @@
             
             
               
-                Oozie系统研究（一）——搭建hadoop集群
+                
+                <a class="post-title-link" href="/2016/05/19/Oozie安装记录/" itemprop="url">
+                  Oozie系统研究（一）——搭建hadoop集群
+                </a>
               
             
           </h1>
@@ -244,7 +254,10 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="hadoop&#x96C6;&#x7FA4;"><a href="#hadoop&#x96C6;&#x7FA4;" class="headerlink" title="hadoop&#x96C6;&#x7FA4;"></a>hadoop&#x96C6;&#x7FA4;</h1><h2 id="&#x535A;&#x5BA2;&#x8BF4;&#x660E;"><a href="#&#x535A;&#x5BA2;&#x8BF4;&#x660E;" class="headerlink" title="&#x535A;&#x5BA2;&#x8BF4;&#x660E;"></a>&#x535A;&#x5BA2;&#x8BF4;&#x660E;</h2><p>&#x8FD1;&#x671F;&#x5BFC;&#x5E08;&#x8981;&#x6211;&#x7814;&#x7A76;&#x4E00;&#x4E0B;&#x5927;&#x6570;&#x636E;&#x7CFB;&#x7EDF;&#x5F15;&#x64CE;oozie&#x4E2D;&#x5DE5;&#x4F5C;&#x6D41;&#x6A21;&#x5F0F;&#xFF0C;&#x4E5F;&#x662F;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x63A5;&#x89E6;&#x5230;&#x5927;&#x6570;&#x636E;&#x76F8;&#x5173;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5728;&#x6574;&#x4E2A;&#x5B66;&#x4E60;&#x8FC7;&#x7A0B;&#x548C;&#x5B9E;&#x9A8C;&#x73AF;&#x5883;&#x7684;&#x642D;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5B66;&#x4E60;&#x5230;&#x4E86;&#x8BB8;&#x591A;&#x77E5;&#x8BC6;&#xFF0C;&#x4E5F;&#x9047;&#x5230;&#x4E86;&#x8BF8;&#x591A;&#x5751;&#x3002;&#x60F3;&#x628A;&#x8FD9;&#x4E9B;&#x7ECF;&#x9A8C;&#x548C;&#x6559;&#x8BAD;&#x505A;&#x4E2A;&#x8BB0;&#x5F55;&#x603B;&#x7ED3;&#xFF0C;&#x65B9;&#x4FBF;&#x540E;&#x7EED;&#x81EA;&#x5DF1;&#x590D;&#x4E60;&#x548C;&#x540E;&#x6765;&#x4EBA;&#x53C2;&#x8003;&#xFF0C;&#x5982;&#x6709;&#x9519;&#x8BEF;&#x4E4B;&#x5904;&#xFF0C;&#x6B22;&#x8FCE;&#x6279;&#x8BC4;&#x6307;&#x6B63;&#x3002;</p>
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="hadoop&#x96C6;&#x7FA4;"><a href="#hadoop&#x96C6;&#x7FA4;" class="headerlink" title="hadoop&#x96C6;&#x7FA4;"></a>hadoop&#x96C6;&#x7FA4;</h1><h2 id="&#x535A;&#x5BA2;&#x8BF4;&#x660E;"><a href="#&#x535A;&#x5BA2;&#x8BF4;&#x660E;" class="headerlink" title="&#x535A;&#x5BA2;&#x8BF4;&#x660E;"></a>&#x535A;&#x5BA2;&#x8BF4;&#x660E;</h2><p>&#x8FD1;&#x671F;&#x5BFC;&#x5E08;&#x8981;&#x6211;&#x7814;&#x7A76;&#x4E00;&#x4E0B;&#x5927;&#x6570;&#x636E;&#x7CFB;&#x7EDF;&#x5F15;&#x64CE;oozie&#x4E2D;&#x5DE5;&#x4F5C;&#x6D41;&#x6A21;&#x5F0F;&#xFF0C;&#x4E5F;&#x662F;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x63A5;&#x89E6;&#x5230;&#x5927;&#x6570;&#x636E;&#x76F8;&#x5173;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5728;&#x6574;&#x4E2A;&#x5B66;&#x4E60;&#x8FC7;&#x7A0B;&#x548C;&#x5B9E;&#x9A8C;&#x73AF;&#x5883;&#x7684;&#x642D;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5B66;&#x4E60;&#x5230;&#x4E86;&#x8BB8;&#x591A;&#x77E5;&#x8BC6;&#xFF0C;&#x4E5F;&#x9047;&#x5230;&#x4E86;&#x8BF8;&#x591A;&#x5751;&#x3002;&#x60F3;&#x628A;&#x8FD9;&#x4E9B;&#x7ECF;&#x9A8C;&#x548C;&#x6559;&#x8BAD;&#x505A;&#x4E2A;&#x8BB0;&#x5F55;&#x603B;&#x7ED3;&#xFF0C;&#x65B9;&#x4FBF;&#x540E;&#x7EED;&#x81EA;&#x5DF1;&#x590D;&#x4E60;&#x548C;&#x540E;&#x6765;&#x4EBA;&#x53C2;&#x8003;&#xFF0C;&#x5982;&#x6709;&#x9519;&#x8BEF;&#x4E4B;&#x5904;&#xFF0C;&#x6B22;&#x8FCE;&#x6279;&#x8BC4;&#x6307;&#x6B63;&#x3002;</p>
 <h2 id="Oozie&#x7B80;&#x4ECB;"><a href="#Oozie&#x7B80;&#x4ECB;" class="headerlink" title="Oozie&#x7B80;&#x4ECB;"></a>Oozie&#x7B80;&#x4ECB;</h2><h2 id="Oozie&#x73AF;&#x5883;&#x4F9D;&#x8D56;"><a href="#Oozie&#x73AF;&#x5883;&#x4F9D;&#x8D56;" class="headerlink" title="Oozie&#x73AF;&#x5883;&#x4F9D;&#x8D56;"></a>Oozie&#x73AF;&#x5883;&#x4F9D;&#x8D56;</h2><ul>
 <li>Unix box (tested on Mac OS X and Linux)</li>
 <li>Java JDK 1.6+</li>
@@ -317,46 +330,35 @@
 <h3 id="Server-Installation"><a href="#Server-Installation" class="headerlink" title="Server Installation"></a>Server Installation</h3><h3 id="Client-Installation"><a href="#Client-Installation" class="headerlink" title="Client Installation"></a>Client Installation</h3><h2 id="&#x5185;&#x5BB9;&#x53C2;&#x8003;"><a href="#&#x5185;&#x5BB9;&#x53C2;&#x8003;" class="headerlink" title="&#x5185;&#x5BB9;&#x53C2;&#x8003;"></a>&#x5185;&#x5BB9;&#x53C2;&#x8003;</h2><p><a href="http://www.ifzer.com/2014/10/31/how_to_install_hadoop_on_mac_ox_x/" target="_blank" rel="external">&#x5982;&#x4F55;&#x5728;MacOSX&#x4E0A;&#x5B89;&#x88C5;Hadoop(how to install hadoop on mac os x</a></p>
 <p><a href="http://shayanmasood.com/blog/how-to-setup-hadoop-on-mac-os-x-10-9-mavericks/" target="_blank" rel="external">HOW TO SETUP HADOOP ON MAC OS X 10.9 MAVERICKS</a></p>
 <p><a href="http://www.rohitmenon.com/index.php/apache-oozie-installation/" target="_blank" rel="external">Apache Oozie Installation</a></p>
-</span>
+
+            
+          </span>
+        
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Oozie-hadoop/" rel="tag">#Oozie,hadoop</a>
-          
-        </div>
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/14/大数据工作流模式/" rel="prev" title="大数据工作流模式">
-                大数据工作流模式 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
         </div>
@@ -365,10 +367,6 @@
 
 
         
-  <div class="comments" id="comments">
-    
-  </div>
-
 
       </div>
 
@@ -389,17 +387,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" src="/images/default_avatar.jpg" alt="huxiaoqiang" itemprop="image"/>
           <p class="site-author-name" itemprop="name">huxiaoqiang</p>
@@ -462,23 +451,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hadoop集群"><span class="nav-number">1.</span> <span class="nav-text">hadoop集群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客说明"><span class="nav-number">1.1.</span> <span class="nav-text">博客说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie简介"><span class="nav-number">1.2.</span> <span class="nav-text">Oozie简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie环境依赖"><span class="nav-number">1.3.</span> <span class="nav-text">Oozie环境依赖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本机环境"><span class="nav-number">1.3.1.</span> <span class="nav-text">本机环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java安装以及环境变量设置"><span class="nav-number">1.4.</span> <span class="nav-text">Java安装以及环境变量设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven安装"><span class="nav-number">1.5.</span> <span class="nav-text">Maven安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">1.5.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置环境变量"><span class="nav-number">1.5.2.</span> <span class="nav-text">设置环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ExtJS-library安装"><span class="nav-number">1.6.</span> <span class="nav-text">ExtJS library安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop安装配置，以及测试"><span class="nav-number">1.7.</span> <span class="nav-text">Hadoop安装配置，以及测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备条件-ssh-keys"><span class="nav-number">1.7.1.</span> <span class="nav-text">准备条件 ssh keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装"><span class="nav-number">1.7.2.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境配置"><span class="nav-number">1.7.3.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-env-sh"><span class="nav-number">1.7.3.1.</span> <span class="nav-text">hadoop-env.sh</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#core-site-xml"><span class="nav-number">1.7.3.2.</span> <span class="nav-text">core-site.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hdfs-site-xml"><span class="nav-number">1.7.3.3.</span> <span class="nav-text">hdfs-site.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mapred-site-xml"><span class="nav-number">1.7.3.4.</span> <span class="nav-text">mapred-site.xml</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本安装成功"><span class="nav-number">1.7.4.</span> <span class="nav-text">基本安装成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监控："><span class="nav-number">1.7.5.</span> <span class="nav-text">监控：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pig安装"><span class="nav-number">1.8.</span> <span class="nav-text">pig安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-1"><span class="nav-number">1.8.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量设置"><span class="nav-number">1.8.2.</span> <span class="nav-text">环境变量设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oozie安装"><span class="nav-number">1.9.</span> <span class="nav-text">Oozie安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#building-Oozie"><span class="nav-number">1.9.1.</span> <span class="nav-text">building Oozie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Server-Installation"><span class="nav-number">1.9.2.</span> <span class="nav-text">Server Installation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Client-Installation"><span class="nav-number">1.9.3.</span> <span class="nav-text">Client Installation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容参考"><span class="nav-number">1.10.</span> <span class="nav-text">内容参考</span></a></li></ol></li></ol></div>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
-        </section>
       
 
     </div>
@@ -549,167 +521,6 @@
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
-        }
-      }
-    };
-  });
-</script>
-
-
 
   <script type="text/javascript" src="/js/bootstrap.js"></script>
 
