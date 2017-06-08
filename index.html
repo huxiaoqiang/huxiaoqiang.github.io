@@ -219,6 +219,95 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/08/rootless/" itemprop="url">
+                  Mac rootless mode
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-06-08T00:00:00+08:00" content="2017-06-08">
+              2017-06-08
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>mac下有些操作，就算是root条件下，也不能执行，会提醒Operation not permitted。</p>
+<p>继续探索， 后来发现Max OS X El 中增加了rootless功能， 即sudo也不能操作部分文件目录， 所以如果需要执行，需要先关闭rootless功能。</p>
+<p>重启系统。 按住Command + R进入恢复模式， 在菜单中打开Terminal</p>
+<p>输入：csrutil disable</p>
+<p>重启设备。</p>
+<p>如果需要打开rootless</p>
+<p>输入:csrutil enable</p>
+<p>关闭rootless功能，完成自己需要的功能和操作之后，最好再去开启rootless功能。</p>
+<p><a href="!http://www.yugongchuan.com/?p=45">参考</a></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/06/05/OPENVPN_IN_UBUNTU/" itemprop="url">
                   ubuntu上假设openvpn
                 </a>
@@ -1366,93 +1455,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/14/大数据工作流模式/" itemprop="url">
-                  大数据工作流模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-06-14T00:00:00+08:00" content="2016-06-14">
-              2016-06-14
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <h1 id="大数据工作流模式"><a href="#大数据工作流模式" class="headerlink" title="大数据工作流模式"></a>大数据工作流模式</h1><p>工作流模式大致分为</p>
-<ul>
-<li>控制 control</li>
-<li>资源 resource</li>
-<li>数据 data</li>
-<li>异常处理 Exception Handling</li>
-</ul>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1499,7 +1501,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1513,7 +1515,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
