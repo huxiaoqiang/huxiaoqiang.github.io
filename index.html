@@ -219,6 +219,93 @@
             
               
                 
+                <a class="post-title-link" href="/2018/05/04/docker问题总结/" itemprop="url">
+                  Docker 研究
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2018-05-04T00:00:00+08:00" content="2018-05-04">
+              2018-05-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h2 id="CentOS下docker-报错Error-response-from-daemon-mkdir-xxxx-invalid-argument"><a href="#CentOS下docker-报错Error-response-from-daemon-mkdir-xxxx-invalid-argument" class="headerlink" title="CentOS下docker 报错Error response from daemon: mkdir xxxx: invalid argument"></a>CentOS下docker 报错Error response from daemon: mkdir xxxx: invalid argument</h2><p>CentOS 机器下报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo docker run -t -i ubuntu:14.04 /bin/bash</div><div class="line">docker: Error response from daemon: mkdir /var/lib/docker/overlay/ea2c9b86f1ebaba280f9fdba6437e9a3fede07562656dd0502fb8ef9cce81684-init/merged/dev/shm: invalid argument.</div><div class="line">See &apos;docker run --help&apos;.</div></pre></td></tr></table></figure>
+<p>是和storage driver有关，CentOS建议使用<code>devicemapper</code>和<code>vps</code>。修改<code>/etc/docker/daemon.json</code>加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;storage-driver&quot;: &quot;devicemapper&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>重启docker即可</p>
+<p>参考： <a href="https://github.com/mattshma/bigdata/issues/97" target="_blank" rel="external">https://github.com/mattshma/bigdata/issues/97</a></p>
+<p>Docker CE 支持64位版本的CentOS7，并且要求内核版本不低于3.10。CentOS7满足最低内核的要求，但是由于内核版本比较低，部分功能（<em>如<code>overlay2</code>存储层驱动</em>）无法使用，且部分功能不太稳定。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/06/08/rootless/" itemprop="url">
                   Mac rootless mode
                 </a>
@@ -1339,122 +1426,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/13/oozie简介/" itemprop="url">
-                  Oozie系统研究（一）——Oozie简介
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-07-13T19:22:14+08:00" content="2016-07-13">
-              2016-07-13
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <h2 id="博客简介"><a href="#博客简介" class="headerlink" title="博客简介"></a>博客简介</h2><p>近期导师要我研究一下大数据系统引擎oozie中工作流模式，也是我第一次接触到大数据相关的内容，在学习过程和实验环境的搭建过程中，学习到了许多知识，也遇到了诸多坑。想把这些经验和教训做个记录和总结，方便后续自己复习和后来人参考，如有错误之处，欢迎批评指正<br>这篇博客简单介绍Oozie，作为了解和入门级的内容。</p>
-<h2 id="什么是Oozie？"><a href="#什么是Oozie？" class="headerlink" title="什么是Oozie？"></a>什么是Oozie？</h2><p>如下是oozie官方首页<a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a>的概述说明：<br>Oozie is a workflow scheduler system to manage Apache Hadoop jobs.<br>Oozie Workflow jobs are Directed Acyclical Graphs (DAGs) of actions.<br>Oozie Coordinator jobs are recurrent Oozie Workflow jobs triggered by time (frequency) and data availabilty.<br>Oozie is integrated with the rest of the Hadoop stack supporting several types of Hadoop jobs out of the box (such as Java map-reduce, Streaming map-reduce, Pig, Hive, Sqoop and Distcp) as well as system specific jobs (such as Java programs and shell scripts).<br>Oozie is a scalable, reliable and extensible system.</p>
-<p>可以简单概述Oozie是什么：</p>
-<ul>
-<li>Oozie是管理hadoop作业的调度系统</li>
-<li>Oozie的工作流作业是一系列动作的有向无环图（DAG）</li>
-<li>Oozie协调作业是通过时间（频率）和有效数据触发当前的Oozie工作流程</li>
-<li>Oozie支持各种hadoop作业，例如:java map-reduce、Streaming map-reduce、pig、hive、sqoop和distcp等等，也支持系统特定的作业，例如java程序和shell脚本。</li>
-<li>Oozie是一个可伸缩，可靠和可拓展的系统<br>下面详细介绍一下Oozie的原理和核心组件</li>
-</ul>
-<h2 id="Oozie原理及特点"><a href="#Oozie原理及特点" class="headerlink" title="Oozie原理及特点"></a>Oozie原理及特点</h2><p>Oozie是一种Java Web应用程序，它运行在Java servlet容器——即Tomcat——中，并使用数据库来存储以下内容：</p>
-<ul>
-<li>工作流定义</li>
-<li>当前运行的工作流实例，包括实例的状态和变量</li>
-</ul>
-<p>Oozie的默认数据库是derby，但是可以配置成mysql。<br>Oozie的用DAG（有向无环图 Direct Acyclic Graph）来定义工作流，DAG指定了工作流执行的顺序。Oozie使用hPDL（一种xml流程定义语言）来描述工作流。</p>
-<h2 id="Oozie核心组件"><a href="#Oozie核心组件" class="headerlink" title="Oozie核心组件"></a>Oozie核心组件</h2><p>hPDL是一种很简洁的语言(xml)，hPDL是一种很简洁的语言，只会使用少数流程控制和动作节点。控制节点会定义执行的流程，并包含工作流的起点和终点（start、end和fail节点）以及控制工作流执行路径的机制（decision、fork和join节点），动作节点是一些机制，通过它们工作流会触发执行计算或者处理任务。</p>
-<h3 id="控制流节点"><a href="#控制流节点" class="headerlink" title="控制流节点"></a>控制流节点</h3><ul>
-<li>start</li>
-<li>end</li>
-<li>fail</li>
-<li>decision</li>
-<li>fork-join<h3 id="任务节点"><a href="#任务节点" class="headerlink" title="任务节点"></a>任务节点</h3></li>
-<li>HDFS<ul>
-<li>move, delete, mkdir, chmod, touchz, distcp</li>
-</ul>
-</li>
-<li>Map-Reduce</li>
-<li>Pig</li>
-<li>Hive</li>
-<li>SSH</li>
-<li>Java</li>
-<li>shell</li>
-<li>spark</li>
-</ul>
-<h2 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h2><p><a href="https://oozie.apache.org" target="_blank" rel="external">https://oozie.apache.org</a><br><a href="http://www.infoq.com/cn/articles/introductionOozie?utm_source=infoq_en&amp;utm_medium=link_on_en_item&amp;utm_campaign=item_in_other_langs" target="_blank" rel="external">Oozie简介</a></p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1501,7 +1472,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1515,7 +1486,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -1569,7 +1540,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
